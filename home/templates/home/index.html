@@ -1,1 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hero-image">
+    <div class="hero-text">
+      <h1 class="display-4"><strong>Bark to Basics</strong></h1>
+      <p class="lead"><strong>Everything you need to know about new dog ownership</strong></p>
+      <a href="{% url 'account_signup' %}"><button>Sign up and get learning!</button></a>
+    </div>
+  </div>
+{% endblock %}
