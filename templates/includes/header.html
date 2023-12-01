@@ -1,6 +1,52 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{% with request.resolver_match_url_name as url_name %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
+                    href="{% url 'home' %}">Home</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
+                    href="{% url 'account_logout' %}">Logout</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == modules_url %}active" aria-current="page{% endif %}"
+                    href="{% url 'modules' %}">Resources</a>
+            </li>        
+            {% else %} <li class="nav-item">
+                <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                    href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
+                    href="{% url 'account_login' %}">Login</a>
+            </li>
+            <!-- Find therapist by region -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Find therapist
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Scotland</a></li>
+                <li><a class="dropdown-item" href="#">North</a></li>
+                <li><a class="dropdown-item" href="#">Midlands</a></li>
+                <li><a class="dropdown-item" href="#">South</a></li>
+                <li><a class="dropdown-item" href="#">Wales</a></li>
+              </ul>
+            </li>
+            </li>
+             {% endif %}
+
+        </ul> <span class="navbar-text text-muted"> providing the best start for your child </span>
+    </div>
+</nav>
+{% endwith %}
+
+{% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">SpeechWell</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,4 +82,4 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> {% endcomment %}
