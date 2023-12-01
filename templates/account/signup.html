@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load account socialaccount %}
+{% block head_title %}
+    {% trans "Signup" %}
+{% endblock head_title %}
+{% block content %}
+    <div class="hero-image">
+        <div class="login-text">
+            <h3>{% trans "Sign Up" %}</h3>
+            <p>
+                {% blocktrans %}
+                    Already have an account? Then please <a href="{{ login_url }}">sign in</a>.
+                {% endblocktrans %}
+            </p>
+            <form class="signup" method="POST" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                <p>
+                    <label for="id_email">Email:</label>
+                    <input type="email"
+                           name="email"
+                           placeholder="Email address (Optional)"
+                           autocomplete="email"
+                           maxlength="320"
+                           id="id_email">
+                </p>
+                <p>
+                    <label for="id_username">Username:</label>
+                    <input type="text"
+                           name="username"
+                           placeholder="Username"
+                           autocomplete="username"
+                           minlength="4"
+                           maxlength="150"
+                           required
+                           id="id_username">
+                </p>
+                <p>
+                    <label for="id_password1">Password:</label>
+                    <input type="password"
+                           name="password1"
+                           placeholder="Password"
+                           autocomplete="new-password"
+                           required
+                           id="id_password1">
+                    <!-- Include your password requirements here -->
+                </p>
+                <p>
+                    <label for="id_password2">Password (again):</label>
+                    <input type="password"
+                           name="password2"
+                           placeholder="Password (again)"
+                           autocomplete="new-password"
+                           required
+                           id="id_password2">
+                </p>
+                {% if redirect_field_value %}
+                    <input type="hidden"
+                           name="{{ redirect_field_name }}"
+                           value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="btn btn-primary right" type="submit">{% trans "Sign Up" %}</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -19,7 +19,8 @@ main {
 
 }
 
-/* -------------Footer */
+
+/* ------------------------------------Footer */
 footer {
     flex-shrink: 0;
     background-color: #0a7cb4;
@@ -40,7 +41,7 @@ footer {
     border-bottom: 2px solid blue;
 }
 
-/* Hero Image */
+/* ----------------------------------------Hero Image */
 
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://res.cloudinary.com/dpv6kxzru/image/upload/v1701431525/plant-bg_gto9oj.jpg');
@@ -79,4 +80,16 @@ footer {
   .hero-text button:hover {
     background-color: #555;
     color: white;
+  }
+
+  /* -------------------------------------------Login page */
+  .login-text {
+    background-color: rgba(212, 207, 207, 0.75);
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0a7cb4;
+    border-radius: 15px;
   }
