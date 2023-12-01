@@ -16,6 +16,18 @@
             <li class="nav-item">
                 <a class="nav-link {% if request.path == modules_url %}active" aria-current="page{% endif %}"
                     href="{% url 'home' %}">Resources</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Find therapist
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Scotland</a></li>
+                <li><a class="dropdown-item" href="#">North</a></li>
+                <li><a class="dropdown-item" href="#">Midlands</a></li>
+                <li><a class="dropdown-item" href="#">South</a></li>
+                <li><a class="dropdown-item" href="#">Wales</a></li>
+              </ul>
             </li>        
             {% else %} <li class="nav-item">
                 <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"

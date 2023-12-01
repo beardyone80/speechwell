@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Therapists</title>
+</head>
+<body>
+    <h1>List of Therapists</h1>
+    <ul>
+        {% for therapist in therapists %}
+            <li>
+                <strong>{{ therapist.username }}</strong><br>
+                Phone: {{ therapist.phone_number }}<br>
+                Address: {{ therapist.address }}<br>
+                Bio: {{ therapist.bio }}<br>
+            </li>
+            <!-- Display other therapist details as needed -->
+        {% endfor %}
+    </ul>
+</body>
+</html>
