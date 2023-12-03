@@ -19,6 +19,7 @@ main {
 
 }
 
+
 /* ------------------------------------Header */
 
 .navbar {
@@ -82,6 +83,7 @@ footer {
   border: none;
   outline: 0;
   display: inline-block;
+  margin: 5px;
   padding: 10px 25px;
   color: #023047;
   border-radius: 15px;
