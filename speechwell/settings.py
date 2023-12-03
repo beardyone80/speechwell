@@ -63,6 +63,9 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
     'ckeditor',
+    'django_comments_xtd',
+    'django_comments',
+    
 ]
 
 SITE_ID = 1
