@@ -19,16 +19,16 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Find therapist
+                  Find therapist
               </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Scotland</a></li>
-                <li><a class="dropdown-item" href="#">North</a></li>
-                <li><a class="dropdown-item" href="#">Midlands</a></li>
-                <li><a class="dropdown-item" href="#">South</a></li>
-                <li><a class="dropdown-item" href="#">Wales</a></li>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="{% url 'therapists_by_location' 'Scotland' %}">Scotland</a></li>
+                  <li><a class="dropdown-item" href="{% url 'therapists_by_location' 'North' %}">North</a></li>
+                  <li><a class="dropdown-item" href="{% url 'therapists_by_location' 'Midlands' %}">Midlands</a></li>
+                  <li><a class="dropdown-item" href="{% url 'therapists_by_location' 'South' %}">South</a></li>
+                  <li><a class="dropdown-item" href="{% url 'therapists_by_location' 'Wales' %}">Wales</a></li>
               </ul>
-            </li>        
+          </li> 
             {% else %} <li class="nav-item">
                 <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
                     href="{% url 'account_signup' %}">Register</a>

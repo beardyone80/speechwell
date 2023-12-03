@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from resources.views import TherapistListView  # Import the TherapistListView from your app
+from resources.views import TherapistListView, TherapistByLocationListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('accounts/', include('allauth.urls')),
-    path('therapists/', TherapistListView.as_view(), name='therapist_list'),  # Add the therapists' list URL
+    path('therapists/', TherapistListView.as_view(), name='therapist_list'),
+    path('therapists/<str:location>/', TherapistByLocationListView.as_view(), name='therapists_by_location'),
 ]
