@@ -22,6 +22,7 @@ main {
 /* ------------------------------------Header */
 
 .navbar {
+  z-index: 1;
   background-color: #0a7cb4;
 }
 
@@ -32,6 +33,7 @@ main {
 
 /* ------------------------------------Footer */
 footer {
+  z-index: 1;
   flex-shrink: 0;
   background-color: #0a7cb4;
   display: flex;
@@ -63,6 +65,7 @@ footer {
 }
 
 .hero-text {
+  z-index: 0;
   background-color: rgba(212, 207, 207, 0.75);
   padding: 20px;
   text-align: center;
