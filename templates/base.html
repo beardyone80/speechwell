@@ -23,14 +23,14 @@
             {% block title %}{% endblock %}
         </title>
     </head>
-    <body>
+    <body class="d-flex flex-column vh-100">
         {% include 'includes/header.html' %}
-
-       
+    
+        <div class="flex-grow-1">
             {% block content %}
-            {% endblock %}            
-       
-
+            {% endblock %}
+        </div>
+        
         {% include 'includes/footer.html' %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
