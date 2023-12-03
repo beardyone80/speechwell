@@ -33,7 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-beardyone80-speechwell-1ke4es9kiwq.ws-eu106.gitpod.io'
+    '8000-beardyone80-speechwell-1ke4es9kiwq.ws-eu106.gitpod.io',
+    'speechwell-61d1e85225c5.herokuapp.com'
     ]
 
 
