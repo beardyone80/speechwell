@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'add_comment' pk=disorder.pk %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Comment</button>
+</form>
