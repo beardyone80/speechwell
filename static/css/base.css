@@ -19,6 +19,16 @@ main {
 
 }
 
+/* ------------------------------------Header */
+
+.navbar {
+  background-color: #0a7cb4;
+}
+
+.navbar.navbar-expand-lg .navbar-custom-text,
+.navbar.navbar-expand-lg .navbar-nav .nav-link {
+  color: beige !important;
+}
 
 /* ------------------------------------Footer */
 footer {
@@ -95,6 +105,10 @@ footer {
 }
 
 /* ----------------------------------------Therapist_list */
+.card-row {
+  padding:10px 10px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
