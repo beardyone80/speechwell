@@ -34,7 +34,6 @@ main {
 
 /* ------------------------------------Footer */
 footer {
-  z-index: 1;
   flex-shrink: 0;
   background-color: #0a7cb4;
   display: flex;
