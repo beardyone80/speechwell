@@ -1,20 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>List of Therapists</title>
-</head>
-<body>
-    <h1>List of Therapists</h1>
-    <ul>
-        {% for therapist in therapists %}
-            <li>
-                <strong>{{ therapist.username }}</strong><br>
-                Phone: {{ therapist.phone_number }}<br>
-                Address: {{ therapist.address }}<br>
-                Bio: {{ therapist.bio }}<br>
-            </li>
-            <!-- Display other therapist details as needed -->
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}List of Therapists{% endblock %}
+
+{% block content %}
+<main class="list-bg">
+    <div class="content-area">
+        <div class="container">
+            <div class="row card-container">
+                {% for therapist in therapists %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card custom-card">
+                        <img src="{{ therapist.profile_pic.url }}" class="card-img-top therapist-img" alt="{{ therapist.username }} Image">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ therapist.username }}</h2>
+                            <p class="card-text"><strong>Phone:</strong> {{ therapist.phone_number|default:"None" }}</p>
+                            <p class="card-text"><strong>Address:</strong> {{ therapist.address|default:"None" }}</p>
+                            <p class="card-text"><strong>Specialties:</strong>
+                                {% for spec in therapist.specialty.all %}
+                                    {{ spec.name }}{% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                            </p>
+                            <p class="card-text"><strong>Bio:</strong> {{ therapist.bio|default:"None" }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

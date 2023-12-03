@@ -38,7 +38,7 @@ class Therapist(models.Model):
     )
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
-    bio = models.TextField(blank=True, null=True)
+    bio = models.TextField(max_length=500, blank=True, null=True)
     location = models.CharField(max_length=100, choices=LOCATION_CHOICES)
     specialty = models.ManyToManyField(Specialty)  # Many-to-many relationship with Specialty model
 
