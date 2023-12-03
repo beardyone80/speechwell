@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from resources.views import TherapistListView, TherapistByLocationListView
+from disorders.views import DisorderListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('therapists/', TherapistListView.as_view(), name='therapist_list'),
     path('therapists/<str:location>/', TherapistByLocationListView.as_view(), name='therapists_by_location'),
+    path('disorders/', DisorderListView.as_view(), name='disorder_list'),
 ]

@@ -57,10 +57,12 @@ INSTALLED_APPS = [
     # apps
     'home',
     'resources',
+    'disorders',
 
     # other
     'cloudinary',
     'cloudinary_storage',
+    'ckeditor',
 ]
 
 SITE_ID = 1
@@ -165,6 +167,23 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Cloudinary settings
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+# CKEditor settings
+CKEDITOR_UPLOAD_PATH = "uploads/"  # Define the upload path for CKEditor files
+CKEDITOR_ALLOW_NONIMAGE_FILES = False  # Allow only images to be uploaded
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'cloudinary': {
+            'cloudName': 'YOUR_CLOUD_NAME',
+            'apiKey': 'YOUR_API_KEY',
+            'apiSecret': 'YOUR_API_SECRET',
+            'folder': 'ckeditor/',  # Optional: Change the folder where images will be stored
+        },
+    },
+}
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -176,3 +195,4 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+LOGIN_REDIRECT_URL= '/disorders/'

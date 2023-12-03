@@ -128,3 +128,10 @@ footer {
   width: 100%;
   object-fit: cover;
 }
+
+/* ----------------------------------------Disorder_list */
+.disorder-img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
