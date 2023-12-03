@@ -6,8 +6,12 @@
     <div class="hero-text">
       <h1 class="display-5">SpeechWell<br><muted>Speech Therapy</muted></h1>
       <p class="lead"><strong>Helping you navigate and advocate</strong></p>
+      {% if user.is_authenticated %}
+      <a href="{% url 'disorder_list' %}"><button class="index-button">Go to Disorders</button></a>
+  {% else %}
       <a href="{% url 'account_signup' %}"><button class="index-button">Register</button></a>
       <a href="{% url 'account_login' %}"><button>Or sign in</button></a>
+  {% endif %}
     </div>
   </div>
 {% endblock %}
