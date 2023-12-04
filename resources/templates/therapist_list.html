@@ -28,7 +28,7 @@
                         {% if request.user.is_superuser %}                                
                             <div class="row">
                                 <div class="col">
-                                    <form method="post" action="{% url 'delete_therapist' therapist.username %}">
+                                    <form method="post" action="{% url 'confirm_delete_therapist' therapist.username %}">
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
