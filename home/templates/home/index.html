@@ -2,35 +2,95 @@
 {% load static %}
 {% block content %}
   <div class="hero-image">
-    <div class="hero-text">
-      <h1 class="display-5">
-        SpeechWell
-        <br>
-        <muted>Speech Therapy</muted>
-      </h1>
-      <p class="lead">
-        <strong>Helping you navigate and advocate</strong>
-      </p>
-      {% if user.is_authenticated %}
-      <div class="button-container">
-        <a href="{% url 'disorder_list' %}" class="index-link">
-          <button class="index-button">Go to Disorders</button>
-        </a>
-        <a href="{% url 'therapist_list' %}" class="index-link">
-          <button class="index-button">See all therapists</button>
-        </a>
+    <div class="index-text">
+      <div class="row">
+        <div class="col-lg-6" style="
+        padding-top: 35px;">
+          <h1 class="display-5">
+            SpeechWell
+            <br>
+            <muted>Speech Therapy</muted>
+          </h1>
+          <p class="lead">
+            <strong>Helping you navigate and advocate</strong>
+          </p>
+          <!-- User logged in buttons-->
+          {% if user.is_authenticated %}
+            <div class="button-container">
+              <a href="{% url 'disorder_list' %}" class="index-link">
+                <button class="btn btn-primary">Go to Disorders</button>
+              </a>
+              <a href="{% url 'therapist_list' %}" class="index-link">
+                <button class="btn btn-primary">See all therapists</button>
+              </a>
+            </div>
+          {% else %}
+            <!-- User logged out buttons-->
+            <div class="button-container">
+              <a href="{% url 'account_signup' %}" class="index-link">
+                <button class="btn btn-primary">Register</button>
+              </a>
+              <a href="{% url 'account_login' %}" class="index-link">
+                <button class="btn btn-primary">Login</button>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+        <div class="col-lg-6">
+          <p class="lead index-blurb">
+            Welcome to SpeechWell speech therapy, your comprehensive resource for valuable insights into common speech and language disorders.
+            Explore our platform to gain in-depth knowledge and understanding of prevalent communication challenges individuals face.
+            Our curated directory showcases a network of skilled therapists specializing in various speech-related conditions.
+            Whether you seek information on conditions like stuttering, aphasia, or articulation disorders, or wish to connect with certified professionals in your area,
+            our website serves as a trusted hub. Discover support, guidance, and access to dedicated therapists,
+            empowering you on your journey to improved communication and speech wellness.
+          </p>
+        </div>
       </div>
-      {% else %}
-        <div class="button-container">
-          <a href="{% url 'account_signup' %}" class="index-link">
-              <button class="index-button">Register</button>
-          </a>
-          <a href="{% url 'account_login' %}" class="index-link">
-              <button class="index-button">Login</button>
-          </a>
-      </div>
-      
-      {% endif %}
     </div>
   </div>
 {% endblock %}
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <div class="hero-image">
+    <div class="index-text">
+      <div class="row">
+        <div class="col-6">
+          <h1 class="display-5">
+            SpeechWell
+            <br>
+            <muted>Speech Therapy</muted>
+          </h1>
+          <p class="lead">
+            <strong>Helping you navigate and advocate</strong>
+          </p>
+          <!-- User logged in buttons-->
+          {% if user.is_authenticated %}
+            <div class="button-container">
+              <a href="{% url 'disorder_list' %}" class="index-link">
+                <button class="btn btn-primary">Go to Disorders</button>
+              </a>
+              <a href="{% url 'therapist_list' %}" class="index-link">
+                <button class="btn btn-primary">See all therapists</button>
+              </a>
+            </div>
+          <!-- User logged out buttons-->
+          {% else %}
+            <div class="button-container">
+              <a href="{% url 'account_signup' %}" class="index-link">
+                <button class="btn btn-primary">Register</button>
+              </a>
+              <a href="{% url 'account_login' %}" class="index-link">
+                <button class="btn btn-primary">Login</button>
+              </a>
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+      
+    </div>
+  </div>
+  
+{% endblock %} {% endcomment %}
