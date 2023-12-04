@@ -1,18 +1,36 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-<div class="hero-image">
+  <div class="hero-image">
     <div class="hero-text">
-      <h1 class="display-5">SpeechWell<br><muted>Speech Therapy</muted></h1>
-      <p class="lead"><strong>Helping you navigate and advocate</strong></p>
+      <h1 class="display-5">
+        SpeechWell
+        <br>
+        <muted>Speech Therapy</muted>
+      </h1>
+      <p class="lead">
+        <strong>Helping you navigate and advocate</strong>
+      </p>
       {% if user.is_authenticated %}
-      <a href="{% url 'disorder_list' %}"><button class="index-button">Go to Disorders</button></a>
-      <a href="{% url 'therapist_list' %}"><button class="index-button">See all therapists</button></a>
-  {% else %}
-      <a href="{% url 'account_signup' %}"><button class="index-button">Register</button></a>
-      <a href="{% url 'account_login' %}"><button>Or sign in</button></a>
-  {% endif %}
+      <div class="button-container">
+        <a href="{% url 'disorder_list' %}" class="index-link">
+          <button class="index-button">Go to Disorders</button>
+        </a>
+        <a href="{% url 'therapist_list' %}" class="index-link">
+          <button class="index-button">See all therapists</button>
+        </a>
+      </div>
+      {% else %}
+        <div class="button-container">
+          <a href="{% url 'account_signup' %}" class="index-link">
+              <button class="index-button">Register</button>
+          </a>
+          <a href="{% url 'account_login' %}" class="index-link">
+              <button class="index-button">Login</button>
+          </a>
+      </div>
+      
+      {% endif %}
     </div>
   </div>
 {% endblock %}

@@ -19,6 +19,28 @@ main {
 
 }
 
+/* ------------------------------------Index Buttons */
+
+.index-link {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px; 
+}
+
+.index-button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: blue; 
+}
+
+
+
+
 
 /* ------------------------------------Header */
 
@@ -138,7 +160,7 @@ footer {
 
 /* ----------------------------------------Disorder_detail */
 .detail-text {
-  color: black;
+  color: white;
   font-weight: 500;
 }
 
