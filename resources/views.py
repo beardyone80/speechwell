@@ -2,14 +2,11 @@ from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
-from django.views.generic import ListView, FormView, DeleteView
+from django.views.generic import ListView, FormView, DeleteView, UpdateView
 from .models import Therapist
 from django.views.generic.edit import CreateView
-from .forms import TherapistForm
+from .forms import TherapistForm, TherapistUpdateForm
 from django.urls import reverse_lazy, reverse
-
-
-
 
 
 # Create your views here.
@@ -52,18 +49,65 @@ class TherapistRegistrationView(UserPassesTestMixin, FormView):
         return super().form_valid(form)
 
 
-# class DeleteTherapistView(UserPassesTestMixin, View):
-#     def test_func(self):
-#         return self.request.user.is_superuser
-
-#     def post(self, request, *args, **kwargs):
-#         therapistID = request.POST.get('therapistID')
-#         therapist = Therapist.objects.get(therapistID=therapistID)
+# class DeleteTherapistView(View):
+#     def post(self, request, username):
+#         therapist = get_object_or_404(Therapist, username=username)
 #         therapist.delete()
 #         return HttpResponseRedirect(reverse('therapist_list'))
 
 class DeleteTherapistView(View):
     def post(self, request, username):
         therapist = get_object_or_404(Therapist, username=username)
-        therapist.delete()
-        return HttpResponseRedirect(reverse('therapist_list'))     
+        return render(request, 'confirm_delete_therapist.html', {'therapist': therapist})        
+
+
+
+
+class TherapistUpdateView(UpdateView):
+    model = Therapist
+    form_class = TherapistUpdateForm
+    template_name = 'therapist_update.html'
+    success_url = reverse_lazy('therapist_list')
+
+    def get_object(self, queryset=None):
+        username = self.kwargs.get('username')
+        return get_object_or_404(Therapist, username=username)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        instance = self.get_object()  # Retrieve the instance here
+        kwargs['instance'] = instance
+        print(instance.username)  # Print some attributes of the instance for debugging
+        print(instance.email)  # Example: Print the email field  # Pass the instance to the form
+        return kwargs
+
+# class TherapistUpdateView(UpdateView):
+#     model = Therapist
+#     form_class = TherapistUpdateForm
+#     template_name = 'therapist_update.html'
+#     success_url = reverse_lazy('therapist_list')
+
+#     def get_object(self, queryset=None):
+#         username = self.kwargs.get('username')
+#         return get_object_or_404(Therapist, username=username)
+
+#     def get_form_kwargs(self):
+#         kwargs = super().get_form_kwargs()
+#         instance = self.get_object()  # Retrieve the instance here
+#         kwargs['instance'] = instance  # Pass the instance to the form
+#         return kwargs        
+        
+# class TherapistUpdateView(UpdateView):
+#     model = Therapist
+#     form_class = TherapistUpdateForm
+#     template_name = 'therapist_update.html'  # Template to render the update form
+#     success_url = reverse_lazy('therapist_list')  # Replace 'therapists_list' with your list view name
+
+#     def get_object(self, queryset=None):
+#         username = self.kwargs.get('username')
+#         return get_object_or_404(Therapist, username=username)
+
+#     def get_form_kwargs(self):
+#         kwargs = super().get_form_kwargs()
+#         kwargs['instance'] = self.get_object()  # Pass the instance of the therapist to the form
+#         return kwargs

@@ -23,10 +23,16 @@
                                 </p>
                                 <p class="card-text"><strong>Bio:</strong> {{ therapist.bio|default:"None" }}</p>
                                 {% if request.user.is_superuser %}
+                                
                                 <form method="post" action="{% url 'delete_therapist' therapist.username %}">
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
+                                <form method="post" action="{% url 'update_therapist' therapist.username %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-success">Update</button>
+                                </form>
+                                {% comment %} <a href="{% url 'update_therapist' therapist.username %}">Update</a> {% endcomment %}
                                 {% endif %}
                             </div>
                         </div>
