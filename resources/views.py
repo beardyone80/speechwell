@@ -1,12 +1,12 @@
-from django.http import HttpResponseForbidden
-from django.shortcuts import render, redirect
+from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
 from django.views.generic import ListView, FormView, DeleteView
 from .models import Therapist
 from django.views.generic.edit import CreateView
 from .forms import TherapistForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 
 
@@ -50,3 +50,20 @@ class TherapistRegistrationView(UserPassesTestMixin, FormView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
+
+# class DeleteTherapistView(UserPassesTestMixin, View):
+#     def test_func(self):
+#         return self.request.user.is_superuser
+
+#     def post(self, request, *args, **kwargs):
+#         therapistID = request.POST.get('therapistID')
+#         therapist = Therapist.objects.get(therapistID=therapistID)
+#         therapist.delete()
+#         return HttpResponseRedirect(reverse('therapist_list'))
+
+class DeleteTherapistView(View):
+    def post(self, request, username):
+        therapist = get_object_or_404(Therapist, username=username)
+        therapist.delete()
+        return HttpResponseRedirect(reverse('therapist_list'))     
