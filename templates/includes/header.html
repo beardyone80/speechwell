@@ -26,6 +26,10 @@
               <a class="nav-link {% if request.path == modules_url %}active" aria-current="page{% endif %}"
                  href="{% url 'disorder_list' %}">Resources</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'therapist_registration' %}active{% endif %}"
+                 href="{% url 'therapist_registration' %}">Register as a Therapist</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle"
                  href="#"
@@ -58,8 +62,10 @@
                   <a class="dropdown-item"
                      href="{% url 'therapist_list' %}">All locations</a>
                 </li>
+
               </ul>
             </li>
+
           {% else %}
             <li class="nav-item">
               <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"

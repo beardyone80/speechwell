@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_comments_xtd',
     'django_comments',
+    'crispy_forms',
     
 ]
 
@@ -83,6 +84,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 ROOT_URLCONF = 'speechwell.urls'
 
