@@ -5,49 +5,49 @@
 
 {% block content %}
 <main class="card-row hero-image">
-    <div class="content-area">
-        <div class="container">
-            <div class="row">
-                {% for therapist in therapists %}
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card custom-card">
-                            <img src="{{ therapist.profile_pic.url }}" class="card-img-top therapist-img" alt="{{ therapist.username }} Image">
-                            <div class="card-body">
-                                <h2 class="card-title">{{ therapist.username }}</h2>
-                                <p class="card-text"><strong>Phone:</strong> {{ therapist.phone_number|default:"None" }}</p>
-                                <p class="card-text"><strong>Address:</strong> {{ therapist.address|default:"None" }}</p>
-                                <p class="card-text"><strong>Specialties:</strong>
-                                    {% for spec in therapist.specialty.all %}
-                                        {{ spec.name }}{% if not forloop.last %}, {% endif %}
-                                    {% endfor %}
-                                </p>
-                                <p class="card-text"><strong>Bio:</strong> {{ therapist.bio|default:"None" }}</p>
-                                {% if request.user.is_superuser %}                                
-                                <div class="row">
-                                    <div class="col">
-                                        <form method="post" action="{% url 'delete_therapist' therapist.username %}">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                    <div class="col">
-                                        <form method="post" action="{% url 'update_therapist' therapist.username %}">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-success">Update</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:4 and not forloop.last %}
-                        <div class="w-100 d-none d-md-block"></div>
+    <div class="row">
+        {% for therapist in therapists %}
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card custom-card">
+                    {% if therapist.profile_pic %}
+                        <img src="{{ therapist.profile_pic.url }}" class="therapist-img" alt="{{ therapist.username }} Profile Pic">
+                    {% else %}
+                        <!-- Display a placeholder or default image -->
+                        <img src="{% static 'static/images/CLSTLogo-half-size.png' %}" alt="Default Profile Pic">
                     {% endif %}
-                {% endfor %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ therapist.username }}</h2>
+                        <p class="card-text"><strong>Phone:</strong> {{ therapist.phone_number|default:"None" }}</p>
+                        <p class="card-text"><strong>Address:</strong> {{ therapist.address|default:"None" }}</p>
+                        <p class="card-text"><strong>Specialties:</strong>
+                            {% for spec in therapist.specialty.all %}
+                                {{ spec.name }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </p>
+                        <p class="card-text"><strong>Bio:</strong> {{ therapist.bio|default:"None" }}</p>
+                        {% if request.user.is_superuser %}                                
+                            <div class="row">
+                                <div class="col">
+                                    <form method="post" action="{% url 'delete_therapist' therapist.username %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                                <div class="col">
+                                    <form method="post" action="{% url 'update_therapist' therapist.username %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success">Update</button>
+                                    </form>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-        </div>
+            {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                <div class="w-100 d-none d-md-block"></div>
+            {% endif %}
+        {% endfor %}
     </div>
 </main>
 {% endblock %}
