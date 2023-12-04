@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
+<div class="hero-image">
+    <div class="container detail-text">
         <h1>{{ disorder.title }}</h1>
         <p><strong>Author:</strong> {{ disorder.author.username }}</p>
         <p><strong>Disorder Type:</strong> {{ disorder.disorder_type.name }}</p>
@@ -9,5 +10,6 @@
         <p><strong>Description:</strong> {{ disorder.description | safe }}</p>
         <p><strong>Created On:</strong> {{ disorder.created_on }}</p>
     </div>
+</div>
 {% endblock %}
 

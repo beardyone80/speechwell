@@ -24,7 +24,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path == modules_url %}active" aria-current="page{% endif %}"
-                 href="{% url 'disorder_list' %}">Resources</a>
+                 href="{% url 'disorder_list' %}">Disorders</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if url_name == 'therapist_registration' %}active{% endif %}"
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item"
-                     href="{% url 'therapist_list' %}">All locations</a>
+                     href="{% url 'therapist_list' %}">All therapists</a>
                 </li>
 
               </ul>

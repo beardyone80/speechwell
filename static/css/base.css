@@ -56,7 +56,7 @@ footer {
 /* ----------------------------------------Hero Image */
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://res.cloudinary.com/dpv6kxzru/image/upload/v1701431525/plant-bg_gto9oj.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/dpv6kxzru/image/upload/v1701431525/plant-bg_gto9oj.jpg');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -136,7 +136,13 @@ footer {
   object-fit: cover;
 }
 
-/* ----------------------------------------Disorder_list */
+/* ----------------------------------------Disorder_detail */
+.detail-text {
+  color: black;
+  font-weight: 500;
+}
+
+/* ----------------------------------------Therapist_form */
 .therapist-form {
   display: table-caption !important;
   padding-bottom: 20px !important;
