@@ -1,86 +1,86 @@
 {% load static %}
-{% with request.resolver_match_url_name as url_name %}
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <button class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarText"
-              aria-controls="navbarText"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+{% with request.resolver_match.url_name as url_name %}
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li>
+          <img src="https://res.cloudinary.com/dpv6kxzru/image/upload/v1701778151/speechwell-high-resolution-logo-white-transparent_jpo0ik.png" class="header-logo" alt="">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+             href="{% url 'home' %}">Home</a>
+        </li>
+        {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
-               href="{% url 'home' %}">Home</a>
+            <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}"
+               href="{% url 'account_logout' %}">Logout</a>
           </li>
-          {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                 href="{% url 'account_logout' %}">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == modules_url %}active" aria-current="page{% endif %}"
-                 href="{% url 'disorder_list' %}">Disorders</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url_name == 'therapist_registration' %}active{% endif %}"
-                 href="{% url 'therapist_registration' %}">Register as a Therapist</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"
-                 href="#"
-                 id="navbarDropdownMenuLink"
-                 role="button"
-                 data-bs-toggle="dropdown"
-                 aria-expanded="false">Find therapist</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item"
-                     href="{% url 'therapists_by_location' 'Scotland' %}">Scotland</a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                     href="{% url 'therapists_by_location' 'North' %}">North</a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                     href="{% url 'therapists_by_location' 'Midlands' %}">Midlands</a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                     href="{% url 'therapists_by_location' 'South' %}">South</a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                     href="{% url 'therapists_by_location' 'Wales' %}">Wales</a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                     href="{% url 'therapist_list' %}">All therapists</a>
-                </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/disorders/' %}active{% endif %}"
+               href="{% url 'disorder_list' %}">Disorders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'therapist_list' %}active{% endif %}"
+               href="{% url 'therapist_list' %}">All Therapists</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               id="navbarDropdownMenuLink"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">Find therapist</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item"
+                   href="{% url 'therapists_by_location' 'Scotland' %}">Scotland</a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                   href="{% url 'therapists_by_location' 'North' %}">North</a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                   href="{% url 'therapists_by_location' 'Midlands' %}">Midlands</a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                   href="{% url 'therapists_by_location' 'South' %}">South</a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                   href="{% url 'therapists_by_location' 'Wales' %}">Wales</a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                   href="{% url 'therapist_list' %}">All therapists</a>
+              </li>
 
-              </ul>
-            </li>
-
-          {% else %}
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                 href="{% url 'account_signup' %}">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                 href="{% url 'account_login' %}">Login</a>
-            </li>
+            </ul>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/accounts/signup/' %}active{% endif %}"
+               href="{% url 'account_signup' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/accounts/login/' %}active{% endif %}"
+               href="{% url 'account_login' %}">Login</a>
           </li>
         {% endif %}
       </ul>
       <span class="navbar-text"><i>providing the best start for your child</i></span>
-    </ul>
+    </div>
   </div>
-</div>
 </nav>
 {% endwith %}
