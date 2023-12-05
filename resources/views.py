@@ -2,7 +2,7 @@ from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
-from django.views.generic import ListView, FormView, DeleteView, UpdateView
+from django.views.generic import ListView, FormView, DeleteView, UpdateView, TemplateView
 from .models import Therapist
 from django.views.generic.edit import CreateView
 from .forms import TherapistForm, TherapistUpdateForm
@@ -49,16 +49,47 @@ class TherapistRegistrationView(UserPassesTestMixin, FormView):
         return super().form_valid(form)
 
 
+class ConfirmDeleteTherapistView(TemplateView):
+    template_name = 'confirm_delete_therapist.html'
+
+    def get_context_data(self, **kwargs):
+        username = kwargs['username']
+        therapist = get_object_or_404(Therapist, username=username)
+        return {'therapist': therapist}
+
+class DeleteTherapistView(View):
+    def post(self, request, username):
+        therapist = get_object_or_404(Therapist, username=username)
+        if 'confirm_delete' in request.POST:
+            therapist.delete()  # Delete the therapist object from the database
+        return redirect('therapist_list')  # Redirect to therapist list after deletion
+      
+
+
 # class DeleteTherapistView(View):
 #     def post(self, request, username):
 #         therapist = get_object_or_404(Therapist, username=username)
 #         therapist.delete()
 #         return HttpResponseRedirect(reverse('therapist_list'))
 
-class DeleteTherapistView(View):
-    def post(self, request, username):
-        therapist = get_object_or_404(Therapist, username=username)
-        return render(request, 'confirm_delete_therapist.html', {'therapist': therapist})        
+# class DeleteTherapistView(View):
+#     def post(self, request, username):
+#         therapist = get_object_or_404(Therapist, username=username)
+#         return render(request, 'confirm_delete_therapist.html', {'therapist': therapist})
+
+# class DeleteTherapistView(View):
+#     def get(self, request, username):
+#         therapist = get_object_or_404(Therapist, username=username)
+#         return render(request, 'delete_therapist.html', {'therapist': therapist})
+
+#     def post(self, request, username):
+#         therapist = get_object_or_404(Therapist, username=username)
+#         if request.POST.get('confirm_delete'):
+#             therapist.delete()  # Delete the therapist object from the database
+#             return redirect('therapist_list')  # Redirect to therapist list after deletion
+#         else:
+#             # Handle cancellation or any other action upon not confirming deletion
+#             return redirect('therapist_list')  # Redirect to therapist list without deletion         
 
 
 
