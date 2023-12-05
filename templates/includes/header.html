@@ -79,7 +79,12 @@
           </li>
         {% endif %}
       </ul>
-      <span class="navbar-text"><i>providing the best start for your child</i></span>
+      {% if user.is_authenticated %}
+      
+        <span class="navbar-custom-text">You are logged in as, {{ user.username }}!&nbsp</span>
+      
+      {% endif %}
+      <span class="navbar-custom-text"><i>providing the best start for your child</i></span>
     </div>
   </div>
 </nav>
