@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 html, body {
   height: 100%;
 }
@@ -5,12 +7,12 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  font-family: var(--main-font);
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 main {
   flex: 1 0 auto;
-  background-color: var(--white);
+  background-color: white;
 }
 
 .scale {
