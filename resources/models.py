@@ -29,18 +29,18 @@ class Therapist(models.Model):
     ]
 
     therapistID = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=100)
-    email = models.EmailField(blank=True, null=True)
+    username = models.CharField(max_length=100, help_text="Enter the name you wish to be displayed as in the directory, this can include spaces.")
+    email = models.EmailField(blank=True, null=True, help_text="(Optional) Enter an email where clients can contact you")
     profile_pic = models.ImageField(
         storage=RawMediaCloudinaryStorage(),
         blank=True,
-        null=True
-    )
-    phone_number = models.CharField(max_length=20, blank=True, null=True)
-    address = models.TextField(blank=True, null=True)
-    bio = models.TextField(max_length=500, blank=True, null=True)
+        null=True,
+    help_text="(Optional) Upload a profile picture or your business logo; all pictures will be automatically resized.")
+    phone_number = models.CharField(max_length=20, blank=True, null=True, help_text="(Optional) Enter your business phone number.")
+    address = models.TextField(blank=True, null=True, help_text="(Optional) Enter your practice/business address")
+    bio = models.TextField(max_length=500, blank=True, null=True, help_text="(Optional) Enter a short biography/description of yourself or your business; max length 500 characters")
     location = models.CharField(max_length=100, choices=LOCATION_CHOICES)
-    specialty = models.ManyToManyField(Specialty)  # Many-to-many relationship with Specialty model
+    specialty = models.ManyToManyField(Specialty, help_text="To select more than one please hold the CTRL key on your keyboard as you select them (mobile users can select using the checkboxes)")  # Many-to-many relationship with Specialty model
 
     def __str__(self):
         return self.username
