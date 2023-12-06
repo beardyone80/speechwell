@@ -226,6 +226,12 @@ footer {
   object-fit: cover;
 }
 
+.btn-danger {
+  color: white !important;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
 /* ----------------------------------------Disorder_list */
 .disorder-img {
   height: 400px;
@@ -245,7 +251,7 @@ footer {
 
 /* ----------------------------------------Therapist_form */
 .therapist-form {
-  display: table-caption !important;
+  /* display: table-caption !important; */
   padding-bottom: 20px !important;
 }
 
@@ -254,6 +260,14 @@ footer {
   margin-top: 50px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 15px;
+}
+
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  line-height: inherit;
 }
 
 /* ----------------------------------------Confirm_delete_therapist */
