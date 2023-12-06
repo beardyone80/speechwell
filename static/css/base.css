@@ -49,7 +49,8 @@ main {
 .index-link {
   text-decoration: none;
   display: inline-block;
-  margin-right: 10px; 
+  margin-right: 10px;
+  padding-bottom: 8px;
 }
 
 .index-blurb {
@@ -158,6 +159,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .hero-text {
@@ -251,7 +254,6 @@ footer {
 
 /* ----------------------------------------Therapist_form */
 .therapist-form {
-  /* display: table-caption !important; */
   padding-bottom: 20px !important;
 }
 
@@ -262,7 +264,10 @@ footer {
   border-radius: 15px;
 }
 
-input, optgroup, select, textarea {
+.form-container input, 
+.form-container optgroup, 
+.form-container select, 
+.form-container textarea {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
