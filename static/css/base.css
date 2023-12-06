@@ -16,7 +16,6 @@ main {
 .scale {
   width: 60%;
   height: auto;
-
 }
 
 /* ------------------------------------Index Page */
@@ -37,7 +36,6 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #0a7cb4;
-  /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); */
   border-radius: 15px;
   margin-left: 0px;
   margin-right: 15px;
@@ -49,22 +47,11 @@ main {
   margin-right: 10px; 
 }
 
-/* .index-button {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  background: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  color: blue; 
-} */
-
 .index-blurb {
   text-align: left;
-  color: black;
+  color: #ddd;
   z-index: 0;
-  background-color: rgba(212, 207, 207, 0.75);
+  background-color: #0a7cb4;
   padding: 20px;
   text-align: left;
   position: relative;
@@ -94,6 +81,7 @@ main {
 .header-logo {
   width: 10rem;
   padding-top: 5px;
+  padding-right: 5px;
 }
 
 /* ------------------------------------Footer */
@@ -101,10 +89,8 @@ footer {
   flex-shrink: 0;
   background-color: #0a7cb4;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-
 }
 
 .social-icon {
@@ -115,6 +101,26 @@ footer {
 
 .active {
   border-bottom: 2px solid blue;
+}
+
+.footer-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+
+.footer-info p {
+  color: #ddd;
+}
+
+.footer-info .text-right {
+  text-align: right;
+}
+
+.admin-link {
+  text-align: justify;
+  color: blue;
 }
 
 /* ----------------------------------------Hero Image */
@@ -204,6 +210,10 @@ footer {
 .detail-text {
   color: white;
   font-weight: 500;
+}
+
+.disorder-pic {
+  height: 300px;
 }
 
 /* ----------------------------------------Therapist_form */
