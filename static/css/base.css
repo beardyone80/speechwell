@@ -262,13 +262,14 @@ footer {
   border-radius: 15px;
 }
 
-textarea {
+input, optgroup, select, textarea {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
   width: 100%;
   line-height: inherit;
 }
+
 
 /* ----------------------------------------Confirm_delete_therapist */
 

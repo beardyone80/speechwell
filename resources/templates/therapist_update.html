@@ -5,26 +5,29 @@
 
 {% block content %}
 <div class="hero-image">
-<div class="container">
     <div class="container">
+    <div class="container therapist-form">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="update-card">
                     <div class="card-body">
     <h2>Update your information</h2>
-    <form method="post" enctype="multipart/form-data" class="mt-4 therapist-form">
-        {% csrf_token %}
-        {% for field in form %}
-            <div class="mb-3">
-                {{ field.label_tag }}
-                {{ field }}
-                {% if field.help_text %}
-                    <small class="text-muted">{{ field.help_text }}</small>
-                {% endif %}
-            </div>
-        {% endfor %}
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    </form>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="mb-3">
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+                <div class="invalid-feedback d-block">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </div>
 </div>
 </div>
@@ -32,4 +35,4 @@
 </div>
 </div>
 </div>
-{% endblock content %}
+{% endblock %}
