@@ -21,12 +21,10 @@
           {% else %}
             <!-- User logged out buttons-->
             <div class="button-container">
-              <a href="{% url 'account_signup' %}" class="index-link">
-                <button class="btn btn-primary">Register</button>
-              </a>
-              <a href="{% url 'account_login' %}" class="index-link">
-                <button class="btn btn-primary">Login</button>
-              </a>
+              <a href="{% url 'account_signup' %}" class="btn btn-primary index-link">Register</a>
+
+              <a href="{% url 'account_login' %}" class="btn btn-primary index-link">Login</a>
+
             </div>
           {% endif %}
         </div>
