@@ -1,110 +1,317 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img src="https://res.cloudinary.com/dpv6kxzru/image/upload/v1701776845/logo-no-background_dplkry.png" alt="Speechwell large logo" width="600" height="600">
 
-Welcome Paul Beardwell,
+# SpeechWell - Empowering Understanding & Support for Children's Speech Disorders
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to SpeechWell, a comprehensive platform dedicated to shedding light on prevalent speech and language disorders affecting children. Our project serves as an invaluable resource, offering insights into the common challenges encountered in children's communication.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The live link can be found here - https://speechwell-61d1e85225c5.herokuapp.com/
 
-## Gitpod Reminders
+## Project Overview
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+SpeechWell's mission is to provide an extensive understanding of various speech-related conditions commonly found in children. We aim to equip users with curated information on conditions like stuttering, language delay, or articulation disorders. Our platform serves as a centralized directory connecting individuals with a network of skilled therapists specializing in these areas.
 
-`python3 -m http.server`
+## What We Offer
 
-A blue button should appear to click: _Make Public_,
+- **Insightful Information:** Explore our curated directory for in-depth knowledge and insights into prevalent communication challenges faced by children.
+  
+- **Therapist Network:** Connect with certified professionals specializing in speech-related conditions prevalent among children.
+  
+- **Empowering Support:** Access guidance and support to aid your child's journey towards improved communication and speech wellness.
 
-Another blue button should appear to click: _Open Browser_.
+Join us at SpeechWell and embark on a journey towards empowering yourself with the necessary tools and resources to support your child's communication and speech development.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+# Responsive Mockup
 
-Another blue button should appear to click: _Open Browser_.
+I have provided a number of mock-ups below of the different pages in my project. The project is fully responsive and scalable across all common user devices and viewports.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## **Home Page**
 
-To log into the Heroku toolbelt CLI:
+![Speechwell home page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701948069/responsve_home_c2ifhx.jpg)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## **Disorders Page**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Speechwell disorders page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701948069/responsve_disorders_nhrkdv.jpg)
 
-------
+## **Therapists Page**
 
-## Release History
+![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701948069/responsve_therapists_shccno.jpg)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## **Login Form**
 
-**September 20 2023:** Update Python version to 3.9.17.
+![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701952036/responsve_login_corrected_rmfxd5.jpg)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## **Sign up form**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Speechwell sign up form](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701952036/responsve_sign-up_corrected_pc6qwv.jpg)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+# User stories and Personas
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+A number of personas and user stories were generated to guide the scope of the project which can be viewed here:
+[User Stories PDF (hosted on Google Drive)](https://drive.google.com/file/d/1Ziyir93tIgMZj-YbDDpDy79r5TDUwm84/view?usp=sharing)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+This informed a number of issues that I added to my project board thus adhering to the principles of Agile Methodology. 
+![Github issues page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701949005/project_issues_cxnvpx.jpg)
+![Github project board](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701949005/project_board_xwrmfa.jpg)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The use of a project/canban board was extremely useful during the development of my project to make sure I was able to stay focused and plan my tasks efficiently.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+# Wireframing and Design Process
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+I used Balsamiq to sketch out some basic wireframing for my project as detailed below. My initial wireframes are close to the design of the deployed project with some alterations that were made during the coding process as coding progressed. Using the wireframes was pivotal in informing the initial direction I would take when setting out the various pages in the project.
+![Balsamiq wirefram index page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701952874/Index_uj48bj.png)
+![Balsamiq wireframe disorders page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701952874/Disorder_Info_Page_buracg.png)
+![Balsamiq wireframe therapist list page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701952874/Therapist_Directory_djwin3.png)
+![Balsamiq wireframe disorder detail page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701952873/Disorder_Detail_Information_z4seqr.png)
+ 
+ -------------------------------------------------------------------------------------------
+ I used the website [app.logo](https://app.logo.com/) to design a clear concise brand for the project with a colour pallet that matches the website colour pallet 
+ 
+**Main index page logo**
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<img src="https://res.cloudinary.com/dpv6kxzru/image/upload/v1701776845/logo-no-background_dplkry.png" alt="Speechwell large logo" width="300" height="300">
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+-------------------------------------------------------------
+ **Small navbar brand logo**(White due to navbar colour)
+ ![Small logo white](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701778151/speechwell-high-resolution-logo-white-transparent_jpo0ik.png)
+Having a consistent brand logo across all pages in the navbar, which was also cllickable and brought the user back to the home page, was important for a good user experience and to also further the needs of the business in terms of recognition.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+# Models
+I used [Lucid](https://lucid.app/) to design an initial ERD. I included some rough ideas of how could I could code each model within the document to assist me. The final models varied slightly but using an ERD as part of Agile working made the design process a lot easier.
+![ERD Model ](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701960270/Speech_Therapy_Website_Capstone_Project_u3genj.jpg)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+My final models have a relationship between the Specialty model and the Therapist model. A many_to_many relationship was established with the 'specialty' field in the Therapist model getting it's value from the Specialty model.
+There is also a relationship between the Disorder model and the Therapist model. The author field in the Disorder model takes it value from the Therapist  model.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+# Website Features
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## __Home Page__
 
-------
+![Home page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701984992/home_page_ddu5vw.jpg)
+ The landing page features a background hero image that covers the full viewport that reflects a calm and professional medical/therapy atmosphere. Reminiscent of a doctors office. This hero image is used consistently on all pages to ensure a good user experience.
+ 
+The page is minimal and clean with a blurb that describes the websites aims and intention and then two buttons that will allow the user to sign up or login to the website.
 
-## FAQ about the uptime script
+A design choice was made to keep all pages looking simple and clean as the subject matter, Speech Therapy, is a serious one and users would prefer to have any information presented concisely without the need for 'flashy' aesthetics.
+ 
 
-**Why have you added this script?**
+## __About Section__
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![About page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701979912/about_d60nul.jpg)
+ I provided a simple 'About' page presenting myself as the developer of the website in the context of the project being made for assessment. This will hopefully ensure that it is clear to any users that come across the website that it is not a real business. A small muted text note in the footer reiterates that the website is for assessment purposes only in relation to a course.
 
-**How will this affect me?**
+## __Therapist Directory__
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Therapist directory](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701985117/therapist_directory_l90uqb.jpg)
+  The therapist directory consists of a list of therapists presented using bootstrap cards. The cards include an image (a headshot, or the therapists business logo perhaps) as well as contact details, the therapist areas of expertise, and a short biography.
+  
+  The directory cards are displayed by iterating through the records in the Therapist model and presenting them using bootstrap in rows and columns. The maximum columns is 4 but this is fully responsive and will shrink down to 1 column on smaller mobile screens and viewports.
+  
+ The directory can be viewed based on the region of the therapist so that the user can narrow down the list of therapists they would potentially contact. Restricting them to local therapists. Future releases of the project will include a search function for users to view only therapists that specialise in certain areas of speech therapy.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## __Disorders List/Detailed Disorder View__
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Disorder list page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981148/disorder_list_page_uvsyyx.jpg)
+ A page is provided that lists the most common speech disorders that a user may encounter. Again presented using bootstrap cards and each card can be clicked through to a detailed information page about the disorder.
 
-**So….?**
+## __Disorder Detail Page__
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Disorder Detail Page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981080/disorder_detail_page_digs2w.jpg)
+Upon clicking on a card on the disorder list page detailed information about that disorder will be presented. This information will provide a concise description of each disorder that will inform the user.
 
-**Can I opt out?**
+## __Sign Up/Login/Sign Out__
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![Sign up page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981322/register_page_jpppwf.jpg)
+![Sign in page](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981437/login_page_tvs8qx.jpg)
+Using the Django allauth package the user will be able to create an account, login to an existing account and log out of their account using the links provided in the navbar. The use of user accounts is important because the projects CRUD functionality (expanded upon below) is restricted to users with the relevant permissions.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## __User Welcome__
 
-**Anything more?**
+![User welcome message](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701979481/user_welcome_nuslyg.jpg)
+The navbar will welcome a logged in user by their username and this welcome is consistent across all pages and produced dynamically from the User model.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+## __Register as a therapist__
 
-Happy coding!
+![Register form](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980128/register_therapist_ekqtxu.jpg)
+If a user with the relevant permissions is logged in, they will be able to access a form to add their details to the therapist directory. When a user signs up for the site, and also consistently present within the footer, is a paragraph informing the user that they can contact the site admin to be added to the therapist directory. The emailto: link opens the users preferred email client and prefills some information for ease of use. The site admin can then reply to the user once they have been approved and direct them to the therapist registration form.
+
+## __Update and Delete Therapist Records__
+
+![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980630/confirm_delete_page_nw6d4k.jpg)
+![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701985661/update_form_opmufa.jpg)
+ If a user is registered as a superuser in the admin panel they will be able to update and delete therapist records. The delete therapist button redirects to a confirmation page to mitigate and lesson the possibility of accidental deletion.
+ 
+ If a user without the correct permissions is able to access these pages an error message will be shown.  ![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980926/add_therapist_no_permission_dqctup.jpg)
+
+## __Dynamic Navbar__
+
+**Logged out user**
+
+![Navbar logged out](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701985993/navbar_logged_out_a5zvdx.jpg)
+
+**Logged in user**
+
+![Logged in user](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701985982/navbar_logged_in_rcd0s1.jpg)
+
+The navbar will also dynamically alter its content depending on the permissions of the logged in user. This will ensure that only registered users can access the full site and only registered users with the correct permissions will be able to access restricted features (delete and update records for example)
+
+### Future features
+Future releases of the website will include the following functionality
+- **Search bar**
+A search function in the navbar that will allow a user to search the website and also the therapist and disorder model so that they can view information that is precisely relevant to their needs.
+- **Full CRUD for 'therapist users'**
+Presently the site admin only is allowed to delete and update a therapists entry in the database. Future iterations of the website will give the users full ownership of their record so that they can update it or delete the entry as required.
+
+## Testing 
+I tested my website using online validators and through manual user testing. The results are detailed below
+
+
+### Validator Testing 
+
+**HTML**
+
+No errors were found when passing the project through the W3C HTML checker
+  -  [Index Page](https://validator.w3.org/nu/?doc=https://speechwell-61d1e85225c5.herokuapp.com/) - Passed
+  - [Login Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/accounts/login/) - Failed due to stray closing `</div>` but I am unable to fix presently due to not knowing where they derive from. I suspect they may be residual from the { extend } tags but I cannot locate them in my code from the rendered code.
+![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701958499/login_w3c_error_ddkocz.jpg)
+	
+- [Disorders Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/disorders/) - Passed
+- [Therapists Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/therapists/) - Passed
+- [Regional Therapist Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/therapists/Scotland/) - Passed (Scotland provided as example)
+- [Log out Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/accounts/logout/) - Passed
+- [About Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/about/) - Passed
+
+**CSS**
+
+No errors were found when passing through the official W3C Jigsaw validator (2 warnings present)
+
+![Jigsaw CSS validator](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701959517/css_validation_iocoou.jpg)
+
+![CSS Warnings](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701959634/css_warning_csrznx.jpg)
+
+ **Python**
+I used the Code Institute Python Linter to test with the following results
+|   Page	| Result  	| Screenshot  	|
+|---	|---	|---	|
+|Project Main Settings   	|Passed  	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974052/project_main_settings_ez4wye.jpg)   	|
+|Project Main URLS   	|Passed   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974053/project_main_urls_x7c3lw.jpg)   	|
+|Resources Views   	|Passed   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974054/resources_views_ovaa7e.jpg)   	|
+|Resources URLS   	|Passed  	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974055/resources_urls_x1teji.jpg)   	|
+|Resources Models   	|Passed  	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974056/resources_models_jd9ncx.jpg)   	|
+|Resources Forms   	|Passed   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974057/resources_forms_bvmmqo.jpg)   	|
+|Home Views   	|Passed  	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974058/home_views_yg0pkx.jpg)   	|
+|Home URLS   	|Passed   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974059/home_urls_ighebj.jpg)   	|
+|Disorders Views   	|Passed 	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974060/disorders_views_g0akcv.jpg)   	|
+
+**Lighthouse**
+I used Lighthouse within Google Chrome developer tools to test my website. 
+![Lighthouse results](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701984435/lighthouse_image_rfuh9z.jpg)
+The results can be accessed here in PDF format
+[Home Page Desktop](https://drive.google.com/file/d/1B6kgZnEoNoLjtJht3ANvHHFeqC2EBCg5/view?usp=sharing)
+[Home Page Mobile](https://drive.google.com/file/d/1YEo3qCxauAzRot6G46e-Hg_wvh5vpf55/view?usp=sharing)
+[Therapist Page Desktop](https://drive.google.com/file/d/1LgO8KZNwzZT2preJI5eEwhZIZwiZrq_2/view?usp=sharing)
+[Therapist Page Mobile](https://drive.google.com/file/d/1alDJX8rLDqTPi4AB7NlofYY2ULzxiR9b/view?usp=sharing)
+[Disorders Page Desktop](https://drive.google.com/file/d/15X9SxXfCrbjqL3O6gHowf_KrdnIuN4ZX/view?usp=sharing)
+[Disorders Page Mobile](https://drive.google.com/file/d/1K8DsAgaJpevdc7h6kumK9oPkaAmG0vu1/view?usp=sharing)
+
+## Manual Testing
+
+|Test   	|Action   	|Result   	|Screenshot   	|
+|---	|---	|---	|---	|
+|#1 Clicking on logo in navbar will redirect user to home page   	|Click on logo   	|PASS   	| N/A  	|
+|#2 Clicking on Home in navbar will redirect user to home page   	|Click on home link|PASS   	| N/A  	|
+|#3 Clicking on Disorders in navbar will redirect LOGGED IN user to disorder page    	|Click on disorders link|PASS   	|N/A   	|
+|#4 Clicking on Find a therapist in navbar will redirect LOGGED IN USER to home page   	|Click on find a therapist link|PASS   	|N/A   	|
+|#5 Clicking on Logout in navbar will redirect LOGGED OUT USER to Logout page   	|Click on logout link   	|PASS   	|N/A   	|
+|#6 Clicking on Register as a therapist as STAFF or SUPERUSER will redirect to Register as a therapist form   	|Click on register as a therapist as STAFF and SUPERUSER   	|PASS   	|N/A   	|
+|#7 LOGGED IN USER will see welcome message on navbar with USERNAME   	|Log in and view navbar   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701979481/user_welcome_nuslyg.jpg)   	|
+|#8 Clicking on site admin link in footer will redirect user to email client with pre-filled subject| Click on contact site admin link    	|PASS  	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701979697/admin_contact_zfzlgq.jpg)|
+|#9 Clicking on site admin link in footer as LOGGED IN USER will redirect user to email client with pre-filled subject   	|Click on contact site admin link   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701979697/admin_contact_zfzlgq.jpg)   	|
+|#10 Clicking on about in footer will redirect user to about page   	|Click on about link   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701979912/about_d60nul.jpg)   	|
+|#11 Clicking on about in footer will redirect LOGGED IN USER to about page   	|Click on about link   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701979912/about_d60nul.jpg)   	|
+|#12 Clicking on 'Register as a therapist' as STAFF or SUPERUSER will redirect to 'Register as a therapist form'   	|Click on register as therapist link as STAFF or SUPERUSER   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980128/register_therapist_ekqtxu.jpg)   	|
+|#13 Submitting 'Register as a therapist form' as STAFF or SUPERUSER will add entry to database and display entry on therapist page   	|Complete and submit form   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980204/register_therapist_success_egjmuc.jpg)   	|
+|#14 Viewing 'Find a therapist page' as SUPERUSER will show 'Update' and 'Delete' buttons under each card   	|View thereapist page as SUPERUSER   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980325/therapist_page_SU_jwsyat.jpg)   	|
+|#15 Clicking on 'Update button' on find a therapist page as SUPERUSER will redirect to 'Therapist update form'   	|Click on update button   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980128/register_therapist_ekqtxu.jpg)   	|
+|#16 Submitting 'Therapist update form' as SUPERUSER will update entry in database  	|Complete and submit form   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980532/update_form_success_wdfm7v.jpg)   	|
+|#17 Clicking on 'Delete button' on therapist page as SUPERUSER will redirect user to 'Confirm delete page'   	|Click on delete button   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980630/confirm_delete_page_nw6d4k.jpg)   	|
+|#18 Clicking on 'Confirm' on 'Confirm delete page' as SUPERUSER will delete database entry   	|Click on confirm delete   	|PASS   	| N/A  	|
+|#19 Clicking on 'Cancel' on 'Confirm delete page' will redirect SUPERUSER back to 'Find a therapist page'   	|Click on cancel button   	|PASS   	|N/A   	|
+|#20 If user without permission tries to access update or delete pages permission will be denied and a message displayed   	|Manually enter URL for register therapist page as a logged out user   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980926/add_therapist_no_permission_dqctup.jpg)   	|
+|#21 Clicking on a Disorder card on disorders page will redirect user to disorder detail page   	|Click on card on disorder page   	|PASS  	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981080/disorder_detail_page_digs2w.jpg)   	|
+|#22 Clicking on Disorders button on index page as a LOGGED IN USER will redirect to disorders page  	|Click on disorders button   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981148/disorder_list_page_uvsyyx.jpg)   	|
+|#23 Clicking on Therapists button on index page as LOGGED IN USER will redirect user to therapist page  	|Click on therapist button   	|PASS   	|N/A   	|
+|#24 Clicking on Register button on index page as user will redirect user to Sign up page   	|Click on the register button   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981322/register_page_jpppwf.jpg)|
+|#25 Clicking on Log In button on index page as user will redirect user to Login page   	|Click on login button   	|PASS   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701981437/login_page_tvs8qx.jpg)   	|
+
+
+### Unfixed Bugs
+None found through user testing
+
+## Deployment
+
+
+I deployed my Django project to Heroku, ensuring seamless functionality, especially for static files, in a production environment.
+
+I followed the steps below 
+
+1.  **Heroku Account and Setup:**
+    
+    -   Created a Heroku account and installed the Heroku CLI for application deployment.
+2.  **Configuring Django for Deployment:**
+    
+    -   Updated my projects main settings.py:
+        -   Added 'whitenoise.middleware.WhiteNoiseMiddleware' to the MIDDLEWARE list.
+        -   Configured STATIC_ROOT and STATICFILES_STORAGE for WhiteNoise.
+        -   I used the following solution for setting the debug flag when deploying
+	        - in settings.py I added `DEBUG = 'DEVELOPMENT'  in os.environ`
+	        - in my env.py file I added `os.environ['DEVELOPMENT'] = 'True'`
+	        
+	        This setup ensures that `DEBUG` is set to `False` in the production environment by checking if the 'DEVELOPMENT' environment variable is present. If 'DEVELOPMENT' is not found or if it evaluates to `False`, the `DEBUG` variable will be set to `False` accordingly. Additionally, it sets the 'DEVELOPMENT' environment variable to 'True'.
+	        
+        
+3.  **Requirements and Version Control:**
+    
+    -   Included 'whitenoise' in requirements.txt
+4.  **Heroku Application Creation:**
+    
+    -   Created a Heroku app using the CLI and configured essential environment variables.
+5.  **Database Setup**
+    
+    -   Configured the production database on Heroku using ElephantSQL
+6.  **Deployment to Heroku:**
+    
+    -   Pushed the code to the Heroku remote repository and ran deployment commands.
+7.  **Collecting Static Files:**
+    
+    -   Executed the 'collectstatic' command to gather static files into STATIC_ROOT.
+8.  **Testing and Verification:**
+    
+    -   Checked the deployed app's URL on Heroku and verified static file serving by WhiteNoise.
+
+
+The deployment process, using Heroku with WhiteNoise for static file serving, enabled a smooth transition from development to a production-ready Django project. Heroku's platform combined with WhiteNoise ensured a reliable hosting environment, ensuring the project's stability and functionality in production.
+
+The live link can be found here - https://speechwell-61d1e85225c5.herokuapp.com/
+
+
+## Credits 
+
+I used the following resources during the development of my project
+
+### Content 
+
+- The text for the disorders content was taking from a variety of sources found during searches on Google. Copyright information for each resource was included at the bottom of each article where possible. A full list of sources can be provided upon request.
+- The following tutorial was used to help me initialise my project and set up OS variables and project folder structure [Django Recipe Sharing Tutorial by Dee Mc](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&ab_channel=DeeMc)
+- The fonts used in the project were sourced from [Google Fonts](https://fonts.google.com/)
+- Code checking and inspiration was implemented by 'rubber ducking' with and pasting errors into [ChatGPT](https://chat.openai.com/)
+- I used [Lucid](https://lucid.app/) to design an initial ERD
+- I used the website [app.logo](https://app.logo.com/) to design a logo and navbar brand icon
+
+### Media
+
+ - Profie pictures and hero image were taken from ["Pexels"](https://www.pexels.com/)
+ - This readme file was produced using [Stack Edit](https://stackedit.io/)
+### Additional acknowledgemnts
+ - Additional assistance was provided by all members of my Code Institute cohort and the staff and facilitators who were invaluable with their technical expertise and unwavering support
