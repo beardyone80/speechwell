@@ -171,7 +171,7 @@ I tested my website using online validators and through manual user testing. The
 
 **HTML**
 
-No errors were found when passing the project through the W3C HTML checker
+I passed the website pages through the W3C HTML checker with the results presented below
   -  [Index Page](https://validator.w3.org/nu/?doc=https://speechwell-61d1e85225c5.herokuapp.com/) - Passed
   - [Login Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/accounts/login/) - Failed due to stray closing `</div>` but I am unable to fix presently due to not knowing where they derive from. I suspect they may be residual from the { extend } tags but I cannot locate them in my code from the rendered code.
 ![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701958499/login_w3c_error_ddkocz.jpg)
