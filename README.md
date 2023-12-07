@@ -302,7 +302,7 @@ I used the following resources during the development of my project
 
 ### Content 
 
-- The text for the disorders content was taking from a variety of sources found during searches on Google. Copyright information for each resource was included at the bottom of each article where possible. A full list of sources can be provided upon request.
+- The text for the disorders content was taking from a variety of sources in collaboration and consultation with my partner who is a qualified speech therapist herself. Copyright information for each resource was included at the bottom of each article where possible. A full list of sources can be provided upon request.
 - The following tutorial was used to help me initialise my project and set up OS variables and project folder structure [Django Recipe Sharing Tutorial by Dee Mc](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&ab_channel=DeeMc)
 - The fonts used in the project were sourced from [Google Fonts](https://fonts.google.com/)
 - Code checking and inspiration was implemented by 'rubber ducking' with and pasting errors into [ChatGPT](https://chat.openai.com/)
