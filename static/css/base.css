@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: blue !important;
+  color: #ddd !important;
 }
 
 main {
@@ -118,6 +118,9 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 .social-icon {
@@ -147,7 +150,7 @@ footer {
 
 .admin-link {
   text-align: justify;
-  color: blue;
+  color: #ddd;
 }
 
 /* ----------------------------------------Hero Image */
@@ -198,12 +201,13 @@ footer {
 .login-text {
   background-color: rgba(212, 207, 207, 0.75);
   padding: 20px;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #0a7cb4;
   border-radius: 15px;
+  width: 75%;
 }
 
 /* ----------------------------------------Therapist_list */
