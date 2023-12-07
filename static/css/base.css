@@ -111,6 +111,10 @@ main {
   padding-right: 5px;
 }
 
+.dropdown-item {
+  color: #0a7cb4 !important;
+}
+
 /* ------------------------------------Footer */
 footer {
   flex-shrink: 0;
