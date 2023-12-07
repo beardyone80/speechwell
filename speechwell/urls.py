@@ -25,8 +25,14 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('resources/', include('resources.urls')),
     path('therapists/', TherapistListView.as_view(), name='therapist_list'),
-    path('therapists/<str:location>/', TherapistByLocationListView.as_view(), name='therapists_by_location'),
+    path(
+        'therapists/<str:location>/', TherapistByLocationListView.as_view(),
+        name='therapists_by_location'
+        ),
     path('disorders/', DisorderListView.as_view(), name='disorder_list'),
-    path('disorders/<slug:slug>/', DisorderDetailView.as_view(), name='disorder_detail'),
+    path(
+        'disorders/<slug:slug>/', DisorderDetailView.as_view(),
+        name='disorder_detail'
+        ),
 
 ]

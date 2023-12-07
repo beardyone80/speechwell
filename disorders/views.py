@@ -2,6 +2,7 @@ from django.views.generic import ListView
 from django.views.generic import DetailView
 from .models import Disorder
 
+
 class DisorderListView(ListView):
     model = Disorder
     template_name = 'disorder_list.html'

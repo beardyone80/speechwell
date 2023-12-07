@@ -66,7 +66,6 @@ INSTALLED_APPS = [
     'django_comments_xtd',
     'django_comments',
     'crispy_forms',
-    
 ]
 
 SITE_ID = 1
@@ -125,7 +124,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.gitpod.io',
-    'https://*.herokuapp.com',    
+    'https://*.herokuapp.com',
 ]
 
 
@@ -134,16 +133,16 @@ CSRF_TRUSTED_ORIGINS = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
@@ -186,7 +185,7 @@ CKEDITOR_CONFIGS = {
             'cloudName': 'YOUR_CLOUD_NAME',
             'apiKey': 'YOUR_API_KEY',
             'apiSecret': 'YOUR_API_SECRET',
-            'folder': 'ckeditor/',  # Optional: Change the folder where images will be stored
+            'folder': 'ckeditor/',
         },
     },
 }
@@ -202,4 +201,4 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-LOGIN_REDIRECT_URL= 'home'
+LOGIN_REDIRECT_URL = 'home'
