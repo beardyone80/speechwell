@@ -5,7 +5,7 @@ from django.views import View
 from django.views.generic import ListView, FormView, UpdateView, TemplateView
 from .models import Therapist
 from .forms import TherapistForm, TherapistUpdateForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 
 # Create your views here.
@@ -45,12 +45,25 @@ class TherapistRegistrationView(UserPassesTestMixin, FormView):
         user = self.request.user
         return user.is_superuser or user.is_staff
 
+    # def handle_no_permission(self):
+    #     # Error message if user is not superuser
+    #     return HttpResponseForbidden(
+    #         "You don't have permission to access this page."
+    #         "Please contact site admin if you wish to register as a therapist."
+    #         )
     def handle_no_permission(self):
-        # Error message if user is not superuser
-        return HttpResponseForbidden(
-            "You don't have permission to access this page."
-            "Please contact site admin if you wish to register as a therapist."
-            )
+        error_message = (
+            "You don't have permission to access this page. "
+            "Please contact the site admin if you wish to register "
+            "as a therapist."
+        )
+
+        go_back_url = reverse('therapist_registration')
+
+        return render(self.request, 'error_template.html', {
+            'error_message': error_message,
+            'go_back_url': go_back_url,
+        })
 
     def form_valid(self, form):
         form.save()
