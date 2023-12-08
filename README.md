@@ -140,9 +140,10 @@ If a user with the relevant permissions is logged in, they will be able to acces
 
 ![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980630/confirm_delete_page_nw6d4k.jpg)
 ![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701985661/update_form_opmufa.jpg)
- If a user is registered as a superuser in the admin panel they will be able to update and delete therapist records. The delete therapist button redirects to a confirmation page to mitigate and lesson the possibility of accidental deletion.
+
+If a user is registered as a superuser in the admin panel they will be able to update and delete therapist records. The delete therapist button redirects to a confirmation page to mitigate and lesson the possibility of accidental deletion.
  
- If a user without the correct permissions is able to access these pages an error message will be shown.  ![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980926/add_therapist_no_permission_dqctup.jpg)
+If a user without the correct permissions is able to access these pages an error message will be shown.  To test this please login as a standard user (not superuser or staff) and manually append 'resources/therapist/add/' to the URL in the address bar.![Error template message](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701980926/add_therapist_no_permission_dqctup.jpg)
 
 ## __Dynamic Navbar__
 
