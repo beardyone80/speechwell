@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -74,7 +75,7 @@ main {
   height: 400px;
   width: 100%;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
 
@@ -100,6 +101,7 @@ main {
   background-color: #0a7cb4;
 }
 
+/* Change hyperlink colours due to contrast issues */
 .navbar.navbar-expand-lg .navbar-custom-text,
 .navbar.navbar-expand-lg .navbar-nav .nav-link {
   color: beige !important;
@@ -216,7 +218,7 @@ footer {
 
 /* ----------------------------------------Therapist_list */
 .card-row {
-  padding:10px 10px;
+  padding: 10px 10px;
 }
 
 .card {
@@ -266,15 +268,16 @@ footer {
 }
 
 .update-card {
-  background-color:#5c97b4;
+  background-color: #5c97b4;
   margin-top: 50px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
 
-.form-container input, 
-.form-container optgroup, 
-.form-container select, 
+/* To fix overflow issue with forms on small viewports */
+.form-container input,
+.form-container optgroup,
+.form-container select,
 .form-container textarea {
   margin: 0;
   font-family: inherit;
@@ -289,5 +292,5 @@ footer {
 .delete-card {
   background-color: orange;
   margin-top: 50px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

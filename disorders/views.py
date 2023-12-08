@@ -13,4 +13,4 @@ class DisorderDetailView(DetailView):
     model = Disorder
     template_name = 'disorder_detail.html'
     context_object_name = 'disorder'
-    slug_field = 'slug'
+    slug_field = 'slug'  # Determines which article to display

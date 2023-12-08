@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 {% block content %}
   <div class="hero-image">
@@ -6,45 +6,56 @@
       <div class="row">
         <div class="col-lg-4">
           <img src="https://res.cloudinary.com/dpv6kxzru/image/upload/v1701887349/pb-headshot_phca9q.jpg"
-               class="site-owner-img"
-               {% comment %} width="400" {% endcomment %}
+          {% comment %}
+          Height and width in CSS file
+          {% endcomment %}
+               class="site-owner-img" 
                alt="picture of the owner of the website">
-          
         </div>
         <div class="col-lg-8">
           <p class="lead">
-          
-        
             <main class="about-text">
-                <section>
-                    <h2>Welcome to my website!</h2>
-                    <p>My name is Paul Beardwell, and I'm passionate about creating accessible resources for parents and caregivers to support speech therapy for children. This project is a culmination of my journey as a student pursuing the Code Institute Full Stack Diploma course.</p>
-                </section>
-        
-                <section>
-                    <h2>The Inspiration</h2>
-                    <p>As a budding developer, I recognized the need for a platform where parents and caregivers could easily access valuable speech therapy resources. Understanding the importance of speech therapy in a child's development, I embarked on designing this website to provide a simple yet effective gateway to these essential tools.</p>
-                </section>
-        
-                <section>
-                    <h2>My Journey</h2>
-                    <p>This project marks my initial steps into the realm of full-stack development. While it may seem modest in its current state, I am dedicated to continually enhancing my skills and expanding the capabilities of this platform. I am passionate about learning and evolving, aspiring to become a proficient and skilled full-stack developer.</p>
-                </section>
-        
-                <section>
-                    <h2>The Vision</h2>
-                    <p>My vision for this website extends far beyond its current form. I envision a comprehensive hub where users can access a wide array of resources, tools, and guidance to aid in speech therapy for children. I'm committed to nurturing this project and leveraging my skills to contribute meaningfully to the field of full-stack development.</p>
-                </section>
-        
-                <section>
-                    <h2>Future Endeavors</h2>
-                    <p>As I progress in my journey, I aim to incorporate more features, refine the user experience, and implement innovative solutions to meet the evolving needs of our users. I am enthusiastic about the possibilities that lie ahead and excited to grow alongside this project.</p>
-                    <p>Thank you for visiting my website. Your support and feedback are invaluable as I strive to create a more impactful and user-friendly platform for parents, caregivers, and, most importantly, the children benefiting from speech therapy.</p>
-                    <p>If you have any suggestions, questions, or feedback, please don't hesitate to <a target="_blank" href="mailto:beardyusa@gmail.com?subject=Lets%20Talk!">reach out</a> Together, let's make a difference!</p>
-                </section>
-              </main>
+              <section>
+                <h2>Welcome to my website!</h2>
+                <p>
+                  My name is Paul Beardwell, and I'm passionate about creating accessible resources for parents and caregivers to support speech therapy for children. This project is a culmination of my journey as a student pursuing the Code Institute Full Stack Diploma course.
+                </p>
+              </section>
+              <section>
+                <h2>The Inspiration</h2>
+                <p>
+                  As a budding developer, I recognized the need for a platform where parents and caregivers could easily access valuable speech therapy resources. Understanding the importance of speech therapy in a child's development, I embarked on designing this website to provide a simple yet effective gateway to these essential tools.
+                </p>
+              </section>
+              <section>
+                <h2>My Journey</h2>
+                <p>
+                  This project marks my initial steps into the realm of full-stack development. While it may seem modest in its current state, I am dedicated to continually enhancing my skills and expanding the capabilities of this platform. I am passionate about learning and evolving, aspiring to become a proficient and skilled full-stack developer.
+                </p>
+              </section>
+              <section>
+                <h2>The Vision</h2>
+                <p>
+                  My vision for this website extends far beyond its current form. I envision a comprehensive hub where users can access a wide array of resources, tools, and guidance to aid in speech therapy for children. I'm committed to nurturing this project and leveraging my skills to contribute meaningfully to the field of full-stack development.
+                </p>
+              </section>
+              <section>
+                <h2>Future Endeavors</h2>
+                <p>
+                  As I progress in my journey, I aim to incorporate more features, refine the user experience, and implement innovative solutions to meet the evolving needs of our users. I am enthusiastic about the possibilities that lie ahead and excited to grow alongside this project.
+                </p>
+                <p>
+                  Thank you for visiting my website. Your support and feedback are invaluable as I strive to create a more impactful and user-friendly platform for parents, caregivers, and, most importantly, the children benefiting from speech therapy.
+                </p>
+                <p>
+                  If you have any suggestions, questions, or feedback, please don't hesitate to <a target="_blank"
+    href="mailto:beardyusa@gmail.com?subject=Lets%20Talk!">reach out</a> Together, let's make a difference!
+                </p>
+              </p>  
+              </section>
+            </main>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-{% endblock %}
+  {% endblock content %}

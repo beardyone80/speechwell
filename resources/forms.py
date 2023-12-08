@@ -37,7 +37,6 @@ class TherapistUpdateForm(forms.ModelForm):
         # Iterate through fields and set placeholders
         for field_name, field in self.fields.items():
             if field_name == 'profile_pic':
-                # You might not need a placeholder for an image field
                 continue
 
             current_value = self.instance.__dict__.get(field_name)

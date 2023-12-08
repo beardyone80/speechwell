@@ -16,12 +16,13 @@ class Disorder(models.Model):
     slug = models.SlugField(
         max_length=200, unique=True, null=False, default=''
         )
+    # select author from Therapist model
     author = models.ForeignKey(Therapist, on_delete=models.CASCADE)
     disorder_type = models.ForeignKey(Specialty, on_delete=models.CASCADE)
     profile_pic = models.ImageField(
         storage=RawMediaCloudinaryStorage(), blank=True, null=True
         )
-    description = RichTextField()
+    description = RichTextField()  # RichTextField for additional formatting
     excerpt = models.TextField(max_length=200, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 

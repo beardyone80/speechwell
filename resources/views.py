@@ -9,6 +9,8 @@ from django.urls import reverse_lazy
 
 
 # Create your views here.
+
+# Display all therapists in database
 class TherapistListView(View):
     def get(self, request):
         therapists = Therapist.objects.all()
@@ -17,6 +19,7 @@ class TherapistListView(View):
             )
 
 
+# Display therapists by location using location value
 class TherapistByLocationListView(ListView):
     model = Therapist
     template_name = 'therapists_by_location.html'
@@ -32,6 +35,7 @@ class TherapistByLocationListView(ListView):
         return context
 
 
+# Form to register as a therapist- SU only
 class TherapistRegistrationView(UserPassesTestMixin, FormView):
     template_name = 'therapist_form.html'
     form_class = TherapistForm
@@ -53,6 +57,7 @@ class TherapistRegistrationView(UserPassesTestMixin, FormView):
         return super().form_valid(form)
 
 
+# Confirm deletion of therapist
 class ConfirmDeleteTherapistView(TemplateView):
     template_name = 'confirm_delete_therapist.html'
 
@@ -62,6 +67,7 @@ class ConfirmDeleteTherapistView(TemplateView):
         return {'therapist': therapist}
 
 
+# Delete therapist record from database
 class DeleteTherapistView(View):
     def post(self, request, username):
         therapist = get_object_or_404(Therapist, username=username)
@@ -70,6 +76,7 @@ class DeleteTherapistView(View):
         return redirect('therapist_list')
 
 
+# Form to update current therapist record
 class TherapistUpdateView(UpdateView):
     model = Therapist
     form_class = TherapistUpdateForm

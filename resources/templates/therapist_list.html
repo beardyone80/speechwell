@@ -1,15 +1,17 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
-{% block title %}List of Therapists{% endblock %}
+{% block title %}List of Therapists{% endblock title %}
 
 {% block content %}
 <main class="card-row hero-image">
     <div class="row">
         {% for therapist in therapists %}
+            <!-- Iterate through database entries 4 per row-->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card custom-card">
                     {% if therapist.profile_pic %}
+                        <!-- Display the pic from profile pic field -->
                         <img src="{{ therapist.profile_pic.url }}" class="therapist-img" alt="{{ therapist.username }} Profile Pic">
                     {% else %}
                         <!-- Display a placeholder or default image -->
@@ -25,6 +27,7 @@
                             {% endfor %}
                         </p>
                         <p class="card-text"><strong>Bio:</strong> {{ therapist.bio|default:"None" }}</p>
+                        <!-- Super user only buttons -->
                         {% if request.user.is_superuser %}                                
                             <div class="row">
                                 <div class="col">
@@ -41,10 +44,11 @@
                     </div>
                 </div>
             </div>
+            <!-- Four cards per row -->
             {% if forloop.counter|divisibleby:4 and not forloop.last %}
                 <div class="w-100 d-none d-md-block"></div>
             {% endif %}
         {% endfor %}
     </div>
 </main>
-{% endblock %}
+{% endblock content %}

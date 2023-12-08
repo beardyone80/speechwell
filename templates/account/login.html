@@ -1,40 +1,40 @@
 {% extends "base.html" %}
-
 {% load i18n %}
 {% load account socialaccount %}
-
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
-
+{% block head_title %}
+    {% trans "Sign In" %}
+{% endblock head_title %}
 {% block content %}
-<div class="hero-image">
-    <div class="login-text">
-                    <h3>{% trans "Sign In" %}</h3>
-                    <p>
-                        {% blocktrans %}
+    <div class="hero-image">
+        <div class="login-text">
+            <h3>{% trans "Sign In" %}</h3>
+            <p>
+                {% blocktrans %}
                         Welcome back to SpeechWell. Please log in. If you have not created an account yet,
                         then <a class="link" href="{{ signup_url }}">sign up</a> first.
                         {% endblocktrans %}
-                    </p>
-
-                    <form class="login" method="POST" action="{% url 'account_login' %}">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
-                        <button class="btn btn-primary right" type="submit">{% trans "Sign In" %}</button>
-                    </form>
-                    <br>
-                    {% comment %} <p>
-                        <strong>Register as a therapist:</strong>
-                        If you would like to register as a therapist and be listed in our
-                        therapist directory please contact the <a target="_blank" href="mailto:recipient@example.com?subject=ADDRESS%20NOT%20MONITORED&body=This%20email%20address%20is%20not%20monitored.%20It%20exists%20solely%20for%20the%20purposes%20of%20assessment%20for%20a%20course.">site adminstrator</a> after your account is
-                        registered to be given access to the relevant form. Please include your name and practice information when contacting us. Thank you.
-                        
-                    </p> {% endcomment %}
-                </div>
-            </div>
+            </p>
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                    <input type="hidden"
+                           name="{{ redirect_field_name }}"
+                           value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="btn btn-primary right" type="submit">{% trans "Sign In" %}</button>
+            </form>
+            <br>
+            <!-- For users to contact site admin and request additional permissions -->
+            <p>
+                <strong>Register as a therapist:</strong>
+                If you would like to register as a therapist and be listed in our
+                therapist directory please contact the <a target="_blank"
+                href="mailto:recipient@example.com?subject=ADDRESS%20NOT%20MONITORED&body=This%20email%20address%20is%20not%20monitored.%20It%20exists%20solely%20for%20the%20purposes%20of%20assessment%20for%20a%20course.">site adminstrator</a> after your account is
+                registered to be given access to the relevant form. Please include your name and practice information when contacting us. Thank you.
+            </p>
         </div>
     </div>
 </div>
-{% endblock %}
+</div>
+{% endblock content %}

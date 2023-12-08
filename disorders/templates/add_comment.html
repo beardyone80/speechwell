@@ -1,3 +1,8 @@
+{% comment %}
+    # unused template left in for possible
+    # future functionality
+{% endcomment %}
+
 <form method="post" action="{% url 'add_comment' pk=disorder.pk %}">
     {% csrf_token %}
     {{ form.as_p }}

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="hero-image">
@@ -9,6 +9,7 @@
                             <div class="card-body">
                                 <div class="form-container">
                                 <h2>Register as a Therapist</h2>
+                                <!-- Started using crispy forms but encountered errors. Defaulted to django form building with bootstrap styles-->
                                 <form method="post"
                                       enctype="multipart/form-data"
                                       class="mt-4 therapist-form">

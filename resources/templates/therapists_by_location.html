@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
-{% block title %}Therapists by location{% endblock %}
+{% block title %}Therapists by location{% endblock title %}
 
 {% block content %}
 <main class="card-row hero-image">
@@ -23,10 +23,11 @@
                     </div>
                 </div>
             </div>
+            <!-- Rows of four cards -->
             {% if forloop.counter|divisibleby:4 and not forloop.last %}
                 </div><div class="row">
             {% endif %}
         {% endfor %}
     </div>
 </main>
-{% endblock %}
+{% endblock content %}

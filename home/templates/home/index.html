@@ -1,10 +1,11 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 {% block content %}
   <div class="hero-image">
     <div class="index-text">
       <div class="row">
         <div class="col-lg-6">
+          <!-- Img width and height in CSS file -->
           <img src="https://res.cloudinary.com/dpv6kxzru/image/upload/v1701776845/logo-no-background_dplkry.png"
                class="index-logo"
                alt="">
@@ -22,24 +23,22 @@
             <!-- User logged out buttons-->
             <div class="button-container">
               <a href="{% url 'account_signup' %}" class="btn btn-primary index-link">Register</a>
-
               <a href="{% url 'account_login' %}" class="btn btn-primary index-link">Login</a>
-
             </div>
           {% endif %}
         </div>
         <div class="col-lg-6">
           <p class="lead index-blurb">
-            Welcome to SpeechWell speech therapy, your go-to resource for valuable insights into common speech and language disorders affecting children. 
-            Dive into our platform to gain extensive knowledge and understanding of prevalent communication challenges that children face. 
-            Our carefully curated directory features a network of skilled therapists specializing in various speech-related 
-            conditions commonly found in kids. Whether you're seeking information on conditions such as stuttering, 
-            language delay, or articulation disorders in children or aiming to connect with certified professionals in your vicinity, 
-            our website stands as a reliable hub. Discover the support, guidance, and access to dedicated therapists here, 
+            Welcome to SpeechWell speech therapy, your go-to resource for valuable insights into common speech and language disorders affecting children.
+            Dive into our platform to gain extensive knowledge and understanding of prevalent communication challenges that children face.
+            Our carefully curated directory features a network of skilled therapists specializing in various speech-related
+            conditions commonly found in kids. Whether you're seeking information on conditions such as stuttering,
+            language delay, or articulation disorders in children or aiming to connect with certified professionals in your vicinity,
+            our website stands as a reliable hub. Discover the support, guidance, and access to dedicated therapists here,
             empowering you in supporting your child's journey towards improved communication and speech wellness.
           </p>
         </div>
       </div>
     </div>
   </div>
-{% endblock %}
+{% endblock content %}

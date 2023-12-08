@@ -1,38 +1,35 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% extends "base.html" %}
+{% load static %}
 
-{% block title %}Update Therapist{% endblock %}
+{% block title %}Update Therapist{% endblock title %}
 
 {% block content %}
-<div class="hero-image">
-    <div class="container">
-    <div class="container therapist-form">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="update-card">
-                    <div class="card-body form-container">
-    <h2>Update your information</h2>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% for field in form %}
-        <div class="mb-3">
-            {{ field.label_tag }}
-            {{ field }}
-            {% if field.help_text %}
-                <small class="form-text text-muted">{{ field.help_text }}</small>
-            {% endif %}
-            {% for error in field.errors %}
-                <div class="invalid-feedback d-block">{{ error }}</div>
-            {% endfor %}
+    <div class="hero-image">
+        <div class="container">
+            <div class="container therapist-form">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="update-card">
+                            <div class="card-body form-container">
+                                <h2>Update your information</h2>
+                                <!-- Started using crispy forms but encountered errors. Defaulted to django form building with bootstrap styles-->
+                                <form method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="mb-3">
+                                            {{ field.label_tag }}
+                                            {{ field }}
+                                            {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
+                                            {% for error in field.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    {% endfor %}
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-{% endblock %}
+    </div>
+{% endblock content %}
