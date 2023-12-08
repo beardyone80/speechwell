@@ -73,8 +73,8 @@ I used Balsamiq to sketch out some basic wireframing for my project as detailed 
 
 -------------------------------------------------------------
  **Small navbar brand logo**(White due to navbar colour)
- ![Small logo white](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701778151/speechwell-high-resolution-logo-white-transparent_jpo0ik.png)
-Having a consistent brand logo across all pages in the navbar, which was also cllickable and brought the user back to the home page, was important for a good user experience and to also further the needs of the business in terms of recognition.
+ ![Small logo white](https://res.cloudinary.com/dpv6kxzru/image/upload/v1702033258/logosmall_wmv1ol.jpg)
+Having a consistent brand logo across all pages in the navbar, which was also clickable and brought the user back to the home page, was important for a good user experience and to also further the needs of the business in terms of recognition.
 
 # Models
 I used [Lucid](https://lucid.app/) to design an initial ERD. I included some rough ideas of how could I could code each model within the document to assist me. The final models varied slightly but using an ERD as part of Agile working made the design process a lot easier.
@@ -150,38 +150,47 @@ If a user with the relevant permissions is logged in, they will be able to acces
 
 ![Navbar logged out](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701985993/navbar_logged_out_a5zvdx.jpg)
 
-**Logged in user**
+**Logged in superuser/staff**
 
 ![Logged in user](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701985982/navbar_logged_in_rcd0s1.jpg)
 
-The navbar will also dynamically alter its content depending on the permissions of the logged in user. This will ensure that only registered users can access the full site and only registered users with the correct permissions will be able to access restricted features (delete and update records for example)
+**Logged in standard user**
+
+![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1702025772/logged_in_user_fy5dde.jpg)
+
+The navbar will also dynamically alter its content depending on the permissions of the logged in user. This will ensure that only registered users can access the full site and only registered users with the correct permissions will be able to access restricted features. Only superuser and staff can see the Register as a therapist link.
 
 ### Future features
-Future releases of the website will include the following functionality
+Future releases of the website will include the following functionality which were unfortunately out of scope for the timeframe I had to complete this project.
 - **Search bar**
 A search function in the navbar that will allow a user to search the website and also the therapist and disorder model so that they can view information that is precisely relevant to their needs.
 - **Full CRUD for 'therapist users'**
-Presently the site admin only is allowed to delete and update a therapists entry in the database. Future iterations of the website will give the users full ownership of their record so that they can update it or delete the entry as required.
+Presently the site admin only (superuser) is allowed to delete and update a therapists entry in the database and only users who have 'staff' permission on the backend can upload a therepist record to the database. Future iterations of the website will give the users full ownership of their own record so that they can update it or delete the entry as required using additional forms on the front end.
+- **Comment Section**
+There will be an implementation of a comment section under each article on the detailed disorder page so that users can provide feedback, support and collobarate with each other as they navigate through their speech therapy journey.
+- **Updated Therapist Model**
+It is my intention to adjust and grow the Therapist model to include additional information including a way to contact each therapist, and a link to their own website to greatly improve the functionality and usefulness of the directory.
+- **Survey Quiz**
+Future iterations of the website will also feature a 'survey' form similar to a quiz that caregivers can use to inform where their research could focus. This would be in the form of asking questions of the user such as "Can you child form the following sounds 'xx' 'yy' 'zz' clearly" and integrate the answers into a model of disorders and common symptoms and a model of expected speech milestones that a child would reach by a given age in order to present further information to the user.### Future features
+Future releases of the website will include the following functionality
 
 ## Testing 
 I tested my website using online validators and through manual user testing. The results are detailed below
 
 
-### Validator Testing 
-
 **HTML**
 
 I passed the website pages through the W3C HTML checker with the results presented below
-  -  [Index Page](https://validator.w3.org/nu/?doc=https://speechwell-61d1e85225c5.herokuapp.com/) - Passed
-  - [Login Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/accounts/login/) - Failed due to stray closing `</div>` but I am unable to fix presently due to not knowing where they derive from. I suspect they may be residual from the { extend } tags but I cannot locate them in my code from the rendered code.
+  -  [Index Page - link to W3C Results](https://validator.w3.org/nu/?doc=https://speechwell-61d1e85225c5.herokuapp.com/) - Passed
+  - [Login Page - link to W3C Results](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/accounts/login/) - Failed due to stray closing `</div>` but I am unable to fix presently due to not knowing where they derive from. I suspect they may be residual from the { extend } tags but I cannot locate them in my code from the rendered code.
 ![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701958499/login_w3c_error_ddkocz.jpg)
 	
-- [Disorders Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/disorders/) - Passed
-- [Therapists Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/therapists/) - Passed
-- [Regional Therapist Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/therapists/Scotland/) - Passed (Scotland provided as example)
-- [Log out Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/accounts/logout/) - Passed
-- [About Page](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/about/) - Passed
-
+- [Disorders Page - link to W3C Results](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/disorders/) - Passed
+- [Therapists Page - link to W3C Results](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/therapists/) - Passed
+- [Regional Therapist Page - link to W3C Results](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/therapists/Scotland/) - Passed (Scotland provided as example)
+- [Log out Page - link to W3C Results](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/accounts/logout/) - Passed
+- [About Page - link to W3C Results](https://validator.w3.org/nu/?showsource=yes&doc=https://speechwell-61d1e85225c5.herokuapp.com/about/) - Passed
+--------
 **CSS**
 
 No errors were found when passing through the official W3C Jigsaw validator (2 warnings present)
@@ -189,7 +198,7 @@ No errors were found when passing through the official W3C Jigsaw validator (2 w
 ![Jigsaw CSS validator](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701959517/css_validation_iocoou.jpg)
 
 ![CSS Warnings](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701959634/css_warning_csrznx.jpg)
-
+------------
  **Python**
 I used the Code Institute Python Linter to test with the following results
 |   Page	| Result  	| Screenshot  	|
@@ -203,17 +212,24 @@ I used the Code Institute Python Linter to test with the following results
 |Home Views   	|Passed  	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974058/home_views_yg0pkx.jpg)   	|
 |Home URLS   	|Passed   	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974059/home_urls_ighebj.jpg)   	|
 |Disorders Views   	|Passed 	|![enter image description here](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701974060/disorders_views_g0akcv.jpg)   	|
-
+------
 **Lighthouse**
 I used Lighthouse within Google Chrome developer tools to test my website. 
 ![Lighthouse results](https://res.cloudinary.com/dpv6kxzru/image/upload/v1701984435/lighthouse_image_rfuh9z.jpg)
 The results can be accessed here in PDF format
+
 [Home Page Desktop](https://drive.google.com/file/d/1B6kgZnEoNoLjtJht3ANvHHFeqC2EBCg5/view?usp=sharing)
+
 [Home Page Mobile](https://drive.google.com/file/d/1YEo3qCxauAzRot6G46e-Hg_wvh5vpf55/view?usp=sharing)
+
 [Therapist Page Desktop](https://drive.google.com/file/d/1LgO8KZNwzZT2preJI5eEwhZIZwiZrq_2/view?usp=sharing)
+
 [Therapist Page Mobile](https://drive.google.com/file/d/1alDJX8rLDqTPi4AB7NlofYY2ULzxiR9b/view?usp=sharing)
+
 [Disorders Page Desktop](https://drive.google.com/file/d/15X9SxXfCrbjqL3O6gHowf_KrdnIuN4ZX/view?usp=sharing)
+
 [Disorders Page Mobile](https://drive.google.com/file/d/1K8DsAgaJpevdc7h6kumK9oPkaAmG0vu1/view?usp=sharing)
+
 
 ## Manual Testing
 
@@ -295,6 +311,180 @@ The deployment process, using Heroku with WhiteNoise for static file serving, en
 
 The live link can be found here - https://speechwell-61d1e85225c5.herokuapp.com/
 
+## Tech Stack
+
+**Client:** HTML5 | Bootstrap 5.1.3 | CSS | Django 4.2.7
+
+**Server:** Heroku
+
+**Installed apps**
+asgiref=3.7.2
+
+click=8.1.7
+
+cloudinary=1.36.0
+
+colorama=0.4.6
+
+crispy-bootstrap5=2023.10
+
+cssbeautifier=1.14.11
+
+dj-database-url=2.1.0
+
+Django=4.2.7
+
+django-allauth=0.58.2
+
+django-ckeditor=6.7.0
+
+django-cloudinary-storage=0.3.0
+
+django-comments-xtd=2.9.10
+
+django-contrib-comments=2.2.0
+
+django-crispy-forms=2.1
+
+django-js-asset=2.1.0
+
+django-resized=1.0.2
+
+djangorestframework=3.14.0
+
+djlint=1.34.0
+
+EditorConfig=0.12.3
+
+Faker=20.1.0
+
+gunicorn=21.2.0
+
+html-tag-names=0.1.2
+
+html-void-elements=0.1.0
+
+jsbeautifier=1.14.11
+
+oauthlib=3.2.2
+
+pathspec=0.11.2
+
+Pillow=10.1.0
+
+psycopg2=2.9.9
+
+PyJWT=2.8.0
+
+python3-openid=3.2.0
+
+pytz=2023.3.post1
+
+regex=2023.10.3
+
+requests-oauthlib=1.3.1
+
+sqlparse=0.4.4
+
+tqdm=4.66.1
+
+whitenoise=6.6.0
+
+
+## Django Faker module
+I used the [django-faker](https://pypi.org/project/django-faker/) module in order to speed up development of my project using some auto generated entries for my database. I created a 'utils' folder in my app and followed documentation in order to write a custom django management command that generated a number of pretend Therapists and added them to a .csv file. I then imported this file into my database using another custom django command. ChatGPT was used extensively for me to be able to implement this feature as it was brand new to me but it will now serve to be a very useful tool moving forward in my development career.
+
+**Generate .csv file with fake data for database**
+
+    import django
+    import os
+    import sys
+    from pathlib import Path
+    from faker import Faker
+    import csv
+    import random
+    
+    def setup_django_environment():
+        # Change 'project_name' to your Django project's name
+        project_path = Path('speechwell')
+        sys.path.append(str(project_path))
+        os.environ['DJANGO_SETTINGS_MODULE'] = 'speechwell.settings'
+        django.setup()
+    
+    def generate_therapists_csv():
+        from resources.models import Therapist, Specialty
+    
+    # Create a list of specialty choices
+    SPECIALTY_CHOICES = [
+        'Apraxia of Speech', 'Stuttering – Stammering', 'Dysarthria', 'Lisping',
+        'Spasmodic Dysphonia', 'Developmental Language Disorder', 'Muteness – Selective Mutism',
+        'Aphasia', 'Speech Delay'
+    ]
+
+    # Check and create specialties in the database if they don't exist
+    for specialty_name in SPECIALTY_CHOICES:
+        Specialty.objects.get_or_create(name=specialty_name)
+
+    fake = Faker()
+    therapists = []
+    for _ in range(30):
+        therapist = {
+            'username': fake.user_name(),
+            'email': fake.email(),
+            'phone_number': fake.phone_number(),
+            'address': fake.address(),
+            'bio': fake.text(max_nb_chars=500),
+            'location': random.choice(['Scotland', 'North', 'Midlands', 'South', 'Wales']),
+            # Generate random number of specialties per therapist
+            'specialty': ', '.join(random.sample(SPECIALTY_CHOICES, random.randint(1, len(SPECIALTY_CHOICES))))
+        }
+        therapists.append(therapist)
+
+    filename = 'therapists.csv'
+    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['username', 'email', 'phone_number', 'address', 'bio', 'location', 'specialty']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for therapist in therapists:
+            writer.writerow(therapist)
+
+        print(f"Therapists data saved to {filename}")
+    
+    if __name__ == "__main__":
+        setup_django_environment()
+        generate_therapists_csv()
+
+
+**Import data from CSV into database**
+    
+    class Command(BaseCommand):
+    help = 'Imports therapists from a CSV file'
+
+    def add_arguments(self, parser):
+        parser.add_argument('file_path', type=str, help='Path to the CSV file')
+
+    def handle(self, *args, **kwargs):
+        file_path = kwargs['file_path']
+
+        with open(file_path, 'r', encoding='utf-8') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                # Create Therapist objects from CSV data and save them
+                therapist = Therapist(
+                    username=row['username'],
+                    email=row['email'],
+                    phone_number=row['phone_number'],
+                    address=row['address'],
+                    bio=row['bio'],
+                    location=row['location'],
+                    # Parse and assign specialty appropriately to Therapist objects
+                    # This might require additional processing based on how you've saved specialties in the CSV
+                )
+                therapist.save()
+
+        self.stdout.write(self.style.SUCCESS('Therapists imported successfully'))
+	
 
 ## Credits 
 
@@ -302,16 +492,20 @@ I used the following resources during the development of my project
 
 ### Content 
 
-- The text for the disorders content was taking from a variety of sources in collaboration and consultation with my partner who is a qualified speech therapist herself. Copyright information for each resource was included at the bottom of each article where possible. A full list of sources can be provided upon request.
+- The text for the disorders content was taking from a variety of sources in collaboration and consultation with my partner who is a qualified speech therapist herself and the use of search engines. Copyright information for each resource was included at the bottom of each article where possible. A full list of sources can be provided upon request.
 - The following tutorial was used to help me initialise my project and set up OS variables and project folder structure [Django Recipe Sharing Tutorial by Dee Mc](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&ab_channel=DeeMc)
 - The fonts used in the project were sourced from [Google Fonts](https://fonts.google.com/)
 - Code checking and inspiration was implemented by 'rubber ducking' with and pasting errors into [ChatGPT](https://chat.openai.com/)
 - I used [Lucid](https://lucid.app/) to design an initial ERD
 - I used the website [app.logo](https://app.logo.com/) to design a logo and navbar brand icon
+- This readme file was produced using [Stack Edit](https://stackedit.io/)
 
 ### Media
-
+- Images and media storage provided by ["Cloudinary"](https://cloudinary.com/)
  - Profie pictures and hero image were taken from ["Pexels"](https://www.pexels.com/)
- - This readme file was produced using [Stack Edit](https://stackedit.io/)
+ - Fonts used throughout the site were Open Sans from [Google Fonts](https://fonts.google.com/) and bootstrap 'lead' and 'display' classes.
+ 
 ### Additional acknowledgemnts
- - Additional assistance was provided by all members of my Code Institute cohort and the staff and facilitators who were invaluable with their technical expertise and unwavering support
+ - Additional assistance was provided by all members of my Code Institute cohort and the staff and facilitators who were invaluable with their technical expertise and unwavering support.
+ - My partner Carys who pushed me and encouraged me and supported me every step of the way while also providing a vast amount of technical expertise on the subject of speech therapy.
+ - My children, who can finally have 'the big computer' back to play Roblox and Minecraft.
