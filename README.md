@@ -165,7 +165,7 @@ Future releases of the website will include the following functionality which we
 - **Search bar**
 A search function in the navbar that will allow a user to search the website and also the therapist and disorder model so that they can view information that is precisely relevant to their needs.
 - **Full CRUD for 'therapist users'**
-Presently the site admin only (superuser) is allowed to delete and update a therapists entry in the database and only users who have 'staff' permission on the backend can upload a therepist record to the database. Future iterations of the website will give the users full ownership of their own record so that they can update it or delete the entry as required using additinal forms on the front end.
+Presently the site admin only (superuser) is allowed to delete and update a therapists entry in the database and only users who have 'staff' permission on the backend can upload a therepist record to the database. Future iterations of the website will give the users full ownership of their own record so that they can update it or delete the entry as required using additional forms on the front end.
 - **Comment Section**
 There will be an implementation of a comment section under each article on the detailed disorder page so that users can provide feedback, support and collobarate with each other as they navigate through their speech therapy journey.
 - **Updated Therapist Model**
