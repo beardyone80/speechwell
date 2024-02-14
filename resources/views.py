@@ -81,7 +81,18 @@ class ConfirmDeleteTherapistView(TemplateView):
 
 
 # Delete therapist record from database
-class DeleteTherapistView(View):
+# class DeleteTherapistView(View):
+#     def post(self, request, username):
+#         therapist = get_object_or_404(Therapist, username=username)
+#         if 'confirm_delete' in request.POST:
+#             therapist.delete()
+#         return redirect('therapist_list')
+# from django.contrib.auth.mixins import UserPassesTestMixin
+
+class DeleteTherapistView(UserPassesTestMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser or self.request.user.is_staff
+
     def post(self, request, username):
         therapist = get_object_or_404(Therapist, username=username)
         if 'confirm_delete' in request.POST:
