@@ -49,7 +49,8 @@ class TherapistRegistrationView(UserPassesTestMixin, FormView):
     #     # Error message if user is not superuser
     #     return HttpResponseForbidden(
     #         "You don't have permission to access this page."
-    #         "Please contact site admin if you wish to register as a therapist."
+    #         "Please contact site admin if you wish to register as a
+    #           therapist."
     #         )
     def handle_no_permission(self):
         error_message = (
@@ -81,17 +82,22 @@ class ConfirmDeleteTherapistView(TemplateView):
 
 
 # Delete therapist record from database
-# class DeleteTherapistView(View):
-#     def post(self, request, username):
-#         therapist = get_object_or_404(Therapist, username=username)
-#         if 'confirm_delete' in request.POST:
-#             therapist.delete()
-#         return redirect('therapist_list')
-# from django.contrib.auth.mixins import UserPassesTestMixin
-
 class DeleteTherapistView(UserPassesTestMixin, View):
     def test_func(self):
         return self.request.user.is_superuser or self.request.user.is_staff
+
+    def handle_no_permission(self):
+        error_message = (
+            "You don't have permission to delete therapists. "
+            "Please contact the site admin if you need assistance."
+        )
+
+        go_back_url = reverse('therapist_list')
+
+        return render(self.request, 'error_template.html', {
+            'error_message': error_message,
+            'go_back_url': go_back_url,
+        })
 
     def post(self, request, username):
         therapist = get_object_or_404(Therapist, username=username)
